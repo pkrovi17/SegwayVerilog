@@ -1,0 +1,146 @@
+ECE551: Digital System Design and Synthesis
+                                     Fall 2026
+
+               Course Introduction
+Instructor
+Julie Hsiao (julie.hsiao@wisc.edu)
+  • Assistant Teaching Professor
+  • Engineering Hall 3615
+  • Office hour: Thurs. 10:30-12:00pm
+
+Education
+  • University of Toronto (BASc, MASc, PhD)
+
+Research Interest
+  • Stochastic computing, approximate computing
+  • High-level synthesis, CAD
+  • Reconfigurable computing
+Teaching Team
+TAs:                         ICPCs:
+• Jiahao Lin                 • Zenin Chen
+  • jlin445@wisc.edu         • Srivibhav Jonnalagadda
+                             • Ojas Patil
+• Yucheng Huang
+  • yhuang546@wisc.edu
+
+Office hours                 Grader:
+  • Mon, Fri 12:05-12:55PM   • Shreya Somani
+Class Format
+Lectures
+ • Video lectures posted on Canvas → complete weekly quizzes
+ • MWF 9:55-10:45am in EH3654: hands-on exercises
+ • Many exercises work towards final project
+
+Discussions
+ • Hosted by TAs
+ • Problem walk-through
+ • Optional but highly recommended!
+ • 2 sessions will be tool tutorial (held in B555)
+
+Piazza
+ • General questions & discussion
+Course Goals
+• Learn how to use Hardware Description Languages (HDL) to design,
+  verify, and realize digital logic
+• Learn how to synthesize HDLs into hardware using the same tools used
+  in industry
+• Learn how to effectively work to design a digital system in a team
+  environment
+
+• Should be qualified for an entry-level job or internship at an IC design
+  firm (AMD, ARM, Intel, Micron, Nvidia, Qualcomm, …) by the end
+AI Use
+• Allowed to use AI tools
+• Transparency
+  • Clearly state in submissions use OR non-use
+  • State what it was used for
+• Need to be able to explain all code
+
+• We will have a small exercise on using AI for design / testing
+  • After you know some basics
+
+
+• You should be able to easily judge whether the AI tool is doing things
+  right / well or not
+What you should already know…
+• Principles of basic digital logic design (ECE352)
+  • Number representation (unsigned, signed, Hex & Binary)
+  • Boolean algebra
+  • Gate-level design
+  • K-Map minimization
+  • Finite State Machines
+  • Basic datapath structures (adders, shifters, SRAM)
+  • Some basic ModelSim and verilog from ECE352 AHWs
+• How to log in to CAE machines and use a Linux shell
+→ There is a Review Quiz that tests some of these basics
+    Please complete the Quiz by Friday (3 attempts)
+Course Overview
+• SystemVerilog basics – how to describe hw blocks
+• Simulation Mechanics – making sense of simulation results
+• Testbench constructs – create better testing infrastructure
+• Synthesis flow
+• Area/Delay Optimizations
+• Physical Implementations
+Course Goals
+• Provide knowledge and experience in:
+  • Digital circuit design using a HDL (Verilog/SystemVerilog)
+  • HDL simulation
+  • Good practices in digital design verification
+    • How to build self-checking test benches
+  • Synthesis of dataflow and behavioral designs
+    • Optimizing hardware designs (timing, area, power)
+  • Basic static timing analysis concepts
+  • Introduce APR (Auto Place & Route)
+  • Design tools commonly used in industry
+
+• Teach you to think hardware first! …then code design in HDL
+Course Materials
+• Lecture slides
+• No textbook necessary
+• Standards
+  • IEEE Std.1364-2001, IEEE Standard Verilog Hardware Description Language, IEEE, Inc., 2001.
+  • IEEE Std 1364.1-2002, IEEE Standard for Verilog Register Transfer Level Synthesis, IEEE, Inc., 2002
+• Tutorials on Canvas page for various CAD tools used
+• Other useful readings
+Evaluation and Grading
+• 15% Homeworks        15% penalty per 24hrs late, not accepted after 48hrs
+
+• 10% Weekly Quizzes (lowest 1 dropped)         Need to be submitted on time to
+• 10% In-class exercise (lowest 2 dropped)      receive full grade
+
+• 20% Project
+• 20% Midterm
+                   Need to score >50% combined on exams to pass
+• 25% Final
+
+ Graded on a curve. Class average will be around 3.3
+Class Project
+• Work in groups of 4
+
+• Design, model, simulate, synthesize, and test a complex digital system
+
+• One of the most important component of grade / class
+  • In class exercises focus on building components needed
+  • Homework problems that build toward the project
+  • Exams will have some questions project related
+  • Final code review and testing will be detailed
+
+• More details coming later in the course
+Course Tools
+• Industry-standard design tools:
+  • Modelsim / QuestaSim HDL Simulation Tools (Mentor / Siemens)
+  • Design Vision / Design Compiler Synthesis Tools (Synopsys)
+
+• Tutorials will be available for all tools
+  • Modelsim tutorial next week (doc being updated)
+  • Design Vision tutorial around week 8
+Questions?
+In-Class Exercise
+• Read the syllabus
+• Complete EX00 quiz
+
+Reminder for this week:
+• Install / figure out access to tools
+• Complete Review Quiz
+• Watch week 1 lecture videos & complete quiz by Sunday
+

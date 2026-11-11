@@ -1,0 +1,18 @@
+VCD info: dumpfile SPI_main.vcd opened for output.
+PASS: command=8f00 received=006a, 16 SPI clocks, correct timing
+PASS: command=0d02 received=00a5, 16 SPI clocks, correct timing
+PASS: command=8d00 received=0002, 16 SPI clocks, correct timing
+PASS: command=a700 received=0099, 16 SPI clocks, correct timing
+PASS: command=a600 received=008d, 16 SPI clocks, correct timing
+PASS: command=a800 received=0024, 16 SPI clocks, correct timing
+PASS: command=a900 received=0035, 16 SPI clocks, correct timing
+PASS: command=a300 received=0056, 16 SPI clocks, correct timing
+PASS: command=a200 received=0063, 16 SPI clocks, correct timing
+PASS: command=a300 received=00cd, 16 SPI clocks, correct timing
+PASS: command=a200 received=000d, 16 SPI clocks, correct timing
+PASS: command=a700 received=00cd, 16 SPI clocks, correct timing
+PASS: command=a600 received=003d, 16 SPI clocks, correct timing
+PASS: command=a800 received=0065, 16 SPI clocks, correct timing
+PASS: command=a900 received=0084, 16 SPI clocks, correct timing
+Pranav Krovi (pkrovi): all 15 SPI sensor transactions passed!
+SPI_main_tb.sv:155: $finish called at 698474000 (1ps)

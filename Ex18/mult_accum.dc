@@ -1,0 +1,55 @@
+# Exercise 18: run with set gated 0 or set gated 1 before sourcing.
+# Library/search paths come from the tutorial's .synopsys_dc.setup.
+if {![info exists gated]} {set gated 0}
+if {$gated} {
+    set top mult_accum_gated
+    set variant gated
+} else {
+    set top mult_accum
+    set variant original
+}
+
+# Use the same tutorial-configured target library for both designs.
+set saed_lib [file rootname [file tail [lindex $target_library 0]]]
+
+set report_dir reports/$variant
+file mkdir $report_dir
+file mkdir WORK_$variant
+define_design_lib WORK -path ./WORK_$variant
+analyze -format sverilog ${top}.sv
+elaborate $top
+current_design $top
+link
+
+# original exercise constraints: 200 MHz, 2.3 ns high phase
+create_clock -name clk -period 5 -waveform {0 2.3} [get_ports clk]
+set_dont_touch_network [get_ports clk]
+set prim_inputs [remove_from_collection [all_inputs] [get_ports clk]]
+set_input_delay -clock clk 0.75 $prim_inputs
+set_driving_cell -lib_cell NAND2X1_RVT -library $saed_lib $prim_inputs
+
+# identical vectorless power assumptions for a meaningful comparison
+set_switching_activity -static_probability 0.5 -toggle_rate 0.25 -base_clock clk $prim_inputs
+set_switching_activity -static_probability 0.1 -toggle_rate 0.1 -base_clock clk [get_ports en]
+set_max_transition 0.10 [current_design]
+set_output_delay -clock clk 0.75 [all_outputs]
+set_load 0.05 [all_outputs]
+set auto_wire_load_selection false
+set_wire_load_mode top
+set_wire_load_model -name 16000 -library $saed_lib
+
+compile -map_effort medium
+ungroup -all -flatten
+set_fix_hold [get_clocks clk]
+compile -map_effort medium
+
+# Report the final compiled design for both variants.
+redirect $report_dir/check_design.rpt {check_design}
+redirect $report_dir/area.rpt {report_area}
+redirect $report_dir/timing_max.rpt {report_timing -delay_type max -max_paths 10}
+redirect $report_dir/timing_min.rpt {report_timing -delay_type min -max_paths 10}
+redirect $report_dir/constraints.rpt {report_constraint -all_violators}
+redirect $report_dir/power.rpt {report_power}
+change_names -rules verilog -hierarchy
+write -format verilog -hierarchy -output $report_dir/${top}.vg
+puts "Finished $variant: reports and netlist are in $report_dir"

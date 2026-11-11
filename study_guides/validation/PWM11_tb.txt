@@ -1,0 +1,14 @@
+VCD info: dumpfile PWM11.vcd opened for output.
+PASS: duty=0x000, high clocks/period: PWM1=0 PWM2=1983
+PASS: duty=0x001, high clocks/period: PWM1=0 PWM2=1982
+PASS: duty=0x03f, high clocks/period: PWM1=0 PWM2=1920
+PASS: duty=0x040, high clocks/period: PWM1=0 PWM2=1919
+PASS: duty=0x041, high clocks/period: PWM1=1 PWM2=1918
+PASS: duty=0x200, high clocks/period: PWM1=448 PWM2=1471
+PASS: duty=0x400, high clocks/period: PWM1=960 PWM2=959
+PASS: duty=0x600, high clocks/period: PWM1=1472 PWM2=447
+PASS: duty=0x7bf, high clocks/period: PWM1=1919 PWM2=0
+PASS: duty=0x7c0, high clocks/period: PWM1=1920 PWM2=0
+PASS: duty=0x7ff, high clocks/period: PWM1=1983 PWM2=0
+All 11 PWM duty tests passed (45056 clock checks)!
+/home/pkrovi/Downloads/ece551/HW3/PWM11_tb.sv:100: $finish called at 903134000 (1ps)

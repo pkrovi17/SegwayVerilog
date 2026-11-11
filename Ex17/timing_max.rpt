@@ -1,0 +1,1067 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : balance_cntrl
+Version: Y-2026.03
+Date   : Fri Oct 30 10:36:51 2026
+****************************************
+
+Operating Conditions: ss0p95v125c   Library: saed32rvt_ss0p95v125c
+Wire Load Model Mode: top
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: too_fast (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/sub_39/U2_3/CO (FADDX1_RVT)                       0.11       4.35 r
+  iMath/sub_39/U2_4/CO (FADDX1_RVT)                       0.10       4.44 r
+  iMath/sub_39/U2_5/CO (FADDX1_RVT)                       0.10       4.54 r
+  iMath/sub_39/U2_6/CO (FADDX1_RVT)                       0.10       4.63 r
+  iMath/sub_39/U2_7/CO (FADDX1_RVT)                       0.10       4.73 r
+  iMath/sub_39/U2_8/CO (FADDX1_RVT)                       0.10       4.83 r
+  iMath/sub_39/U2_9/CO (FADDX1_RVT)                       0.10       4.92 r
+  iMath/sub_39/U2_10/CO (FADDX1_RVT)                      0.10       5.02 r
+  iMath/sub_39/U2_11/CO (FADDX1_RVT)                      0.10       5.11 r
+  iMath/sub_39/U2_12/S (FADDX1_RVT)                       0.14       5.25 f
+  U868/Y (AO22X2_RVT)                                     0.12       5.37 f
+  U248/Y (OA21X1_RVT)                                     0.08       5.45 f
+  U729/Y (XOR2X1_RVT)                                     0.12       5.57 r
+  U243/Y (AO21X1_RVT)                                     0.07       5.64 r
+  U242/Y (AND4X1_RVT)                                     0.09       5.73 r
+  U241/Y (NAND4X0_RVT)                                    0.08       5.81 f
+  U240/Y (AND3X1_RVT)                                     0.10       5.90 f
+  U239/Y (NAND2X0_RVT)                                    0.10       6.00 r
+  U213/Y (OA22X1_RVT)                                     0.10       6.11 r
+  U727/Y (OAI221X1_RVT)                                   0.10       6.20 f
+  U212/Y (AO221X1_RVT)                                    0.06       6.26 f
+  U198/Y (NOR3X0_RVT)                                     0.10       6.36 r
+  U197/Y (NAND4X0_RVT)                                    0.06       6.42 f
+  U196/Y (NAND4X0_RVT)                                    0.05       6.47 r
+  U195/Y (NAND2X0_RVT)                                    0.03       6.50 f
+  too_fast (out)                                          0.00       6.50 f
+  data arrival time                                                  6.50
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.50
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.75
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: rght_spd[5]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/sub_39/U2_3/CO (FADDX1_RVT)                       0.11       4.35 r
+  iMath/sub_39/U2_4/CO (FADDX1_RVT)                       0.10       4.44 r
+  iMath/sub_39/U2_5/CO (FADDX1_RVT)                       0.10       4.54 r
+  iMath/sub_39/U2_6/CO (FADDX1_RVT)                       0.10       4.63 r
+  iMath/sub_39/U2_7/CO (FADDX1_RVT)                       0.10       4.73 r
+  iMath/sub_39/U2_8/CO (FADDX1_RVT)                       0.10       4.83 r
+  iMath/sub_39/U2_9/CO (FADDX1_RVT)                       0.10       4.92 r
+  iMath/sub_39/U2_10/CO (FADDX1_RVT)                      0.10       5.02 r
+  iMath/sub_39/U2_11/CO (FADDX1_RVT)                      0.10       5.11 r
+  iMath/sub_39/U2_12/S (FADDX1_RVT)                       0.14       5.25 f
+  U868/Y (AO22X2_RVT)                                     0.12       5.37 f
+  U248/Y (OA21X1_RVT)                                     0.08       5.45 f
+  U729/Y (XOR2X1_RVT)                                     0.12       5.57 r
+  U243/Y (AO21X1_RVT)                                     0.07       5.64 r
+  U242/Y (AND4X1_RVT)                                     0.09       5.73 r
+  U241/Y (NAND4X0_RVT)                                    0.08       5.81 f
+  U240/Y (AND3X1_RVT)                                     0.10       5.90 f
+  U239/Y (NAND2X0_RVT)                                    0.10       6.00 r
+  U223/Y (OA22X1_RVT)                                     0.10       6.11 r
+  U222/Y (OA221X1_RVT)                                    0.08       6.19 r
+  U221/Y (OA221X1_RVT)                                    0.07       6.26 r
+  U699/Y (INVX1_RVT)                                      0.01       6.27 f
+  rght_spd[5] (out)                                       0.00       6.27 f
+  data arrival time                                                  6.27
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.98
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: rght_spd[7]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/sub_39/U2_3/CO (FADDX1_RVT)                       0.11       4.35 r
+  iMath/sub_39/U2_4/CO (FADDX1_RVT)                       0.10       4.44 r
+  iMath/sub_39/U2_5/CO (FADDX1_RVT)                       0.10       4.54 r
+  iMath/sub_39/U2_6/CO (FADDX1_RVT)                       0.10       4.63 r
+  iMath/sub_39/U2_7/CO (FADDX1_RVT)                       0.10       4.73 r
+  iMath/sub_39/U2_8/CO (FADDX1_RVT)                       0.10       4.83 r
+  iMath/sub_39/U2_9/CO (FADDX1_RVT)                       0.10       4.92 r
+  iMath/sub_39/U2_10/CO (FADDX1_RVT)                      0.10       5.02 r
+  iMath/sub_39/U2_11/CO (FADDX1_RVT)                      0.10       5.11 r
+  iMath/sub_39/U2_12/S (FADDX1_RVT)                       0.14       5.25 f
+  U868/Y (AO22X2_RVT)                                     0.12       5.37 f
+  U248/Y (OA21X1_RVT)                                     0.08       5.45 f
+  U729/Y (XOR2X1_RVT)                                     0.12       5.57 r
+  U243/Y (AO21X1_RVT)                                     0.07       5.64 r
+  U242/Y (AND4X1_RVT)                                     0.09       5.73 r
+  U241/Y (NAND4X0_RVT)                                    0.08       5.81 f
+  U240/Y (AND3X1_RVT)                                     0.10       5.90 f
+  U239/Y (NAND2X0_RVT)                                    0.10       6.00 r
+  U213/Y (OA22X1_RVT)                                     0.10       6.11 r
+  U727/Y (OAI221X1_RVT)                                   0.10       6.20 f
+  U212/Y (AO221X1_RVT)                                    0.06       6.26 f
+  rght_spd[7] (out)                                       0.00       6.26 f
+  data arrival time                                                  6.26
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.99
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: rght_spd[9]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/sub_39/U2_3/CO (FADDX1_RVT)                       0.11       4.35 r
+  iMath/sub_39/U2_4/CO (FADDX1_RVT)                       0.10       4.44 r
+  iMath/sub_39/U2_5/CO (FADDX1_RVT)                       0.10       4.54 r
+  iMath/sub_39/U2_6/CO (FADDX1_RVT)                       0.10       4.63 r
+  iMath/sub_39/U2_7/CO (FADDX1_RVT)                       0.10       4.73 r
+  iMath/sub_39/U2_8/CO (FADDX1_RVT)                       0.10       4.83 r
+  iMath/sub_39/U2_9/CO (FADDX1_RVT)                       0.10       4.92 r
+  iMath/sub_39/U2_10/CO (FADDX1_RVT)                      0.10       5.02 r
+  iMath/sub_39/U2_11/CO (FADDX1_RVT)                      0.10       5.11 r
+  iMath/sub_39/U2_12/S (FADDX1_RVT)                       0.14       5.25 f
+  U868/Y (AO22X2_RVT)                                     0.12       5.37 f
+  U248/Y (OA21X1_RVT)                                     0.08       5.45 f
+  U729/Y (XOR2X1_RVT)                                     0.12       5.57 r
+  U243/Y (AO21X1_RVT)                                     0.07       5.64 r
+  U242/Y (AND4X1_RVT)                                     0.09       5.73 r
+  U241/Y (NAND4X0_RVT)                                    0.08       5.81 f
+  U240/Y (AND3X1_RVT)                                     0.10       5.90 f
+  U239/Y (NAND2X0_RVT)                                    0.10       6.00 r
+  U746/Y (INVX1_RVT)                                      0.06       6.06 f
+  U205/Y (AO22X1_RVT)                                     0.07       6.12 f
+  U204/Y (NAND2X0_RVT)                                    0.04       6.16 r
+  U202/Y (NAND4X0_RVT)                                    0.07       6.23 f
+  rght_spd[9] (out)                                       0.00       6.23 f
+  data arrival time                                                  6.23
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.02
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: rght_spd[3]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/sub_39/U2_3/CO (FADDX1_RVT)                       0.11       4.35 r
+  iMath/sub_39/U2_4/CO (FADDX1_RVT)                       0.10       4.44 r
+  iMath/sub_39/U2_5/CO (FADDX1_RVT)                       0.10       4.54 r
+  iMath/sub_39/U2_6/CO (FADDX1_RVT)                       0.10       4.63 r
+  iMath/sub_39/U2_7/CO (FADDX1_RVT)                       0.10       4.73 r
+  iMath/sub_39/U2_8/CO (FADDX1_RVT)                       0.10       4.83 r
+  iMath/sub_39/U2_9/CO (FADDX1_RVT)                       0.10       4.92 r
+  iMath/sub_39/U2_10/CO (FADDX1_RVT)                      0.10       5.02 r
+  iMath/sub_39/U2_11/CO (FADDX1_RVT)                      0.10       5.11 r
+  iMath/sub_39/U2_12/S (FADDX1_RVT)                       0.14       5.25 f
+  U868/Y (AO22X2_RVT)                                     0.12       5.37 f
+  U248/Y (OA21X1_RVT)                                     0.08       5.45 f
+  U729/Y (XOR2X1_RVT)                                     0.12       5.57 r
+  U243/Y (AO21X1_RVT)                                     0.07       5.64 r
+  U242/Y (AND4X1_RVT)                                     0.09       5.73 r
+  U241/Y (NAND4X0_RVT)                                    0.08       5.81 f
+  U240/Y (AND3X1_RVT)                                     0.10       5.90 f
+  U794/Y (NAND2X1_RVT)                                    0.11       6.01 r
+  U237/Y (NAND2X0_RVT)                                    0.07       6.09 f
+  U227/Y (AO221X1_RVT)                                    0.14       6.22 f
+  rght_spd[3] (out)                                       0.00       6.22 f
+  data arrival time                                                  6.22
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.03
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: rght_spd[2]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/sub_39/U2_3/CO (FADDX1_RVT)                       0.11       4.35 r
+  iMath/sub_39/U2_4/CO (FADDX1_RVT)                       0.10       4.44 r
+  iMath/sub_39/U2_5/CO (FADDX1_RVT)                       0.10       4.54 r
+  iMath/sub_39/U2_6/CO (FADDX1_RVT)                       0.10       4.63 r
+  iMath/sub_39/U2_7/CO (FADDX1_RVT)                       0.10       4.73 r
+  iMath/sub_39/U2_8/CO (FADDX1_RVT)                       0.10       4.83 r
+  iMath/sub_39/U2_9/CO (FADDX1_RVT)                       0.10       4.92 r
+  iMath/sub_39/U2_10/CO (FADDX1_RVT)                      0.10       5.02 r
+  iMath/sub_39/U2_11/CO (FADDX1_RVT)                      0.10       5.11 r
+  iMath/sub_39/U2_12/S (FADDX1_RVT)                       0.14       5.25 f
+  U868/Y (AO22X2_RVT)                                     0.12       5.37 f
+  U248/Y (OA21X1_RVT)                                     0.08       5.45 f
+  U729/Y (XOR2X1_RVT)                                     0.12       5.57 r
+  U243/Y (AO21X1_RVT)                                     0.07       5.64 r
+  U242/Y (AND4X1_RVT)                                     0.09       5.73 r
+  U241/Y (NAND4X0_RVT)                                    0.08       5.81 f
+  U240/Y (AND3X1_RVT)                                     0.10       5.90 f
+  U794/Y (NAND2X1_RVT)                                    0.11       6.01 r
+  U237/Y (NAND2X0_RVT)                                    0.07       6.09 f
+  U228/Y (AO221X1_RVT)                                    0.13       6.22 f
+  rght_spd[2] (out)                                       0.00       6.22 f
+  data arrival time                                                  6.22
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.03
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: rght_spd[6]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/sub_39/U2_3/CO (FADDX1_RVT)                       0.11       4.35 r
+  iMath/sub_39/U2_4/CO (FADDX1_RVT)                       0.10       4.44 r
+  iMath/sub_39/U2_5/CO (FADDX1_RVT)                       0.10       4.54 r
+  iMath/sub_39/U2_6/CO (FADDX1_RVT)                       0.10       4.63 r
+  iMath/sub_39/U2_7/CO (FADDX1_RVT)                       0.10       4.73 r
+  iMath/sub_39/U2_8/CO (FADDX1_RVT)                       0.10       4.83 r
+  iMath/sub_39/U2_9/CO (FADDX1_RVT)                       0.10       4.92 r
+  iMath/sub_39/U2_10/CO (FADDX1_RVT)                      0.10       5.02 r
+  iMath/sub_39/U2_11/CO (FADDX1_RVT)                      0.10       5.11 r
+  iMath/sub_39/U2_12/S (FADDX1_RVT)                       0.14       5.25 f
+  U868/Y (AO22X2_RVT)                                     0.12       5.37 f
+  U248/Y (OA21X1_RVT)                                     0.08       5.45 f
+  U729/Y (XOR2X1_RVT)                                     0.12       5.57 r
+  U243/Y (AO21X1_RVT)                                     0.07       5.64 r
+  U242/Y (AND4X1_RVT)                                     0.09       5.73 r
+  U241/Y (NAND4X0_RVT)                                    0.08       5.81 f
+  U240/Y (AND3X1_RVT)                                     0.10       5.90 f
+  U239/Y (NAND2X0_RVT)                                    0.10       6.00 r
+  U219/Y (OAI22X1_RVT)                                    0.10       6.11 f
+  U218/Y (NAND2X0_RVT)                                    0.03       6.14 r
+  U216/Y (NAND4X0_RVT)                                    0.07       6.20 f
+  rght_spd[6] (out)                                       0.00       6.20 f
+  data arrival time                                                  6.20
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.05
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: rght_spd[8]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/sub_39/U2_3/CO (FADDX1_RVT)                       0.11       4.35 r
+  iMath/sub_39/U2_4/CO (FADDX1_RVT)                       0.10       4.44 r
+  iMath/sub_39/U2_5/CO (FADDX1_RVT)                       0.10       4.54 r
+  iMath/sub_39/U2_6/CO (FADDX1_RVT)                       0.10       4.63 r
+  iMath/sub_39/U2_7/CO (FADDX1_RVT)                       0.10       4.73 r
+  iMath/sub_39/U2_8/CO (FADDX1_RVT)                       0.10       4.83 r
+  iMath/sub_39/U2_9/CO (FADDX1_RVT)                       0.10       4.92 r
+  iMath/sub_39/U2_10/CO (FADDX1_RVT)                      0.10       5.02 r
+  iMath/sub_39/U2_11/CO (FADDX1_RVT)                      0.10       5.11 r
+  iMath/sub_39/U2_12/S (FADDX1_RVT)                       0.14       5.25 f
+  U868/Y (AO22X2_RVT)                                     0.12       5.37 f
+  U248/Y (OA21X1_RVT)                                     0.08       5.45 f
+  U729/Y (XOR2X1_RVT)                                     0.12       5.57 r
+  U243/Y (AO21X1_RVT)                                     0.07       5.64 r
+  U242/Y (AND4X1_RVT)                                     0.09       5.73 r
+  U241/Y (NAND4X0_RVT)                                    0.08       5.81 f
+  U240/Y (AND3X1_RVT)                                     0.10       5.90 f
+  U239/Y (NAND2X0_RVT)                                    0.10       6.00 r
+  U210/Y (OAI22X1_RVT)                                    0.10       6.11 f
+  U209/Y (NAND2X0_RVT)                                    0.03       6.14 r
+  U207/Y (NAND4X0_RVT)                                    0.07       6.20 f
+  rght_spd[8] (out)                                       0.00       6.20 f
+  data arrival time                                                  6.20
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.05
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: lft_spd[5] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/add_37_aco/U1_3/CO (FADDX1_RVT)                   0.11       4.35 r
+  iMath/add_37_aco/U1_4/CO (FADDX1_RVT)                   0.10       4.44 r
+  iMath/add_37_aco/U1_5/CO (FADDX1_RVT)                   0.10       4.54 r
+  iMath/add_37_aco/U1_6/CO (FADDX1_RVT)                   0.10       4.63 r
+  iMath/add_37_aco/U1_7/CO (FADDX1_RVT)                   0.10       4.73 r
+  iMath/add_37_aco/U1_8/CO (FADDX1_RVT)                   0.10       4.83 r
+  iMath/add_37_aco/U1_9/CO (FADDX1_RVT)                   0.10       4.92 r
+  iMath/add_37_aco/U1_10/CO (FADDX1_RVT)                  0.10       5.02 r
+  iMath/add_37_aco/U1_11/CO (FADDX1_RVT)                  0.09       5.11 r
+  iMath/add_37_aco/U1_12/Y (XOR3X2_RVT)                   0.12       5.23 f
+  U328/Y (NAND2X0_RVT)                                    0.07       5.31 r
+  U327/Y (AO222X1_RVT)                                    0.14       5.44 r
+  U325/Y (AO21X1_RVT)                                     0.08       5.52 r
+  U324/Y (NAND2X0_RVT)                                    0.03       5.56 f
+  U323/Y (AND4X1_RVT)                                     0.10       5.65 f
+  U322/Y (NAND4X0_RVT)                                    0.06       5.71 r
+  U321/Y (AND3X1_RVT)                                     0.08       5.79 r
+  U320/Y (NAND2X0_RVT)                                    0.10       5.88 f
+  U304/Y (OA22X1_RVT)                                     0.13       6.01 f
+  U303/Y (OA221X1_RVT)                                    0.09       6.10 f
+  U302/Y (OA221X1_RVT)                                    0.08       6.18 f
+  U701/Y (INVX1_RVT)                                      0.02       6.20 r
+  lft_spd[5] (out)                                        0.00       6.20 r
+  data arrival time                                                  6.20
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.05
+
+
+  Startpoint: ptch[9] (input port clocked by clk)
+  Endpoint: lft_spd[7] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  balance_cntrl      16000                 saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.30       0.30 f
+  ptch[9] (in)                                            0.01       0.31 f
+  U605/Y (OR3X1_RVT)                                      0.07       0.38 f
+  U820/Y (NOR4X0_RVT)                                     0.09       0.47 r
+  U819/Y (OR2X1_RVT)                                      0.05       0.53 r
+  U785/Y (AND2X1_RVT)                                     0.08       0.61 r
+  U599/Y (AO21X1_RVT)                                     0.11       0.72 r
+  U793/Y (INVX1_RVT)                                      0.03       0.75 f
+  U597/Y (OR2X1_RVT)                                      0.06       0.81 f
+  U791/Y (INVX1_RVT)                                      0.03       0.84 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_1/CO (FADDX1_RVT)
+                                                          0.09       0.93 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_2/CO (FADDX1_RVT)
+                                                          0.10       1.02 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_3/CO (FADDX1_RVT)
+                                                          0.10       1.12 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_4/CO (FADDX1_RVT)
+                                                          0.10       1.21 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_5/CO (FADDX1_RVT)
+                                                          0.10       1.31 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_6/CO (FADDX1_RVT)
+                                                          0.10       1.41 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_7/CO (FADDX1_RVT)
+                                                          0.10       1.50 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_8/CO (FADDX1_RVT)
+                                                          0.10       1.60 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_9/CO (FADDX1_RVT)
+                                                          0.10       1.69 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_10/CO (FADDX1_RVT)
+                                                          0.10       1.79 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_11/CO (FADDX1_RVT)
+                                                          0.10       1.89 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_12/CO (FADDX1_RVT)
+                                                          0.10       1.98 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_13/CO (FADDX1_RVT)
+                                                          0.10       2.08 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_14/CO (FADDX1_RVT)
+                                                          0.10       2.17 r
+  iPID/add_0_root_add_0_root_add_71_2/U1_15/S (FADDX1_RVT)
+                                                          0.15       2.32 f
+  U783/Y (OR2X1_RVT)                                      0.07       2.39 f
+  U720/Y (AND2X1_RVT)                                     0.09       2.48 f
+  U718/Y (AO21X1_RVT)                                     0.13       2.61 f
+  U562/Y (NAND2X0_RVT)                                    0.07       2.68 r
+  U821/Y (XNOR2X1_RVT)                                    0.14       2.82 r
+  iMath/mult_27/S2_2_9/S (FADDX1_RVT)                     0.15       2.96 f
+  iMath/mult_27/S2_3_8/S (FADDX1_RVT)                     0.15       3.11 r
+  iMath/mult_27/S2_4_7/S (FADDX1_RVT)                     0.15       3.26 f
+  iMath/mult_27/S2_5_6/S (FADDX1_RVT)                     0.15       3.41 r
+  iMath/mult_27/S2_6_5/S (FADDX1_RVT)                     0.15       3.56 f
+  iMath/mult_27/S2_7_4/S (FADDX1_RVT)                     0.15       3.71 r
+  U792/Y (XOR2X1_RVT)                                     0.12       3.83 f
+  iMath/mult_27/S14_11_0/S (FADDX1_RVT)                   0.15       3.98 r
+  U653/Y (NAND2X0_RVT)                                    0.05       4.03 f
+  U652/Y (NAND2X0_RVT)                                    0.06       4.09 r
+  U679/Y (XNOR2X1_RVT)                                    0.14       4.23 r
+  iMath/add_37_aco/U1_3/CO (FADDX1_RVT)                   0.11       4.35 r
+  iMath/add_37_aco/U1_4/CO (FADDX1_RVT)                   0.10       4.44 r
+  iMath/add_37_aco/U1_5/CO (FADDX1_RVT)                   0.10       4.54 r
+  iMath/add_37_aco/U1_6/CO (FADDX1_RVT)                   0.10       4.63 r
+  iMath/add_37_aco/U1_7/CO (FADDX1_RVT)                   0.10       4.73 r
+  iMath/add_37_aco/U1_8/CO (FADDX1_RVT)                   0.10       4.83 r
+  iMath/add_37_aco/U1_9/CO (FADDX1_RVT)                   0.10       4.92 r
+  iMath/add_37_aco/U1_10/CO (FADDX1_RVT)                  0.10       5.02 r
+  iMath/add_37_aco/U1_11/CO (FADDX1_RVT)                  0.09       5.11 r
+  iMath/add_37_aco/U1_12/Y (XOR3X2_RVT)                   0.12       5.23 f
+  U328/Y (NAND2X0_RVT)                                    0.07       5.31 r
+  U327/Y (AO222X1_RVT)                                    0.14       5.44 r
+  U325/Y (AO21X1_RVT)                                     0.08       5.52 r
+  U324/Y (NAND2X0_RVT)                                    0.03       5.56 f
+  U323/Y (AND4X1_RVT)                                     0.10       5.65 f
+  U322/Y (NAND4X0_RVT)                                    0.06       5.71 r
+  U321/Y (AND3X1_RVT)                                     0.08       5.79 r
+  U320/Y (NAND2X0_RVT)                                    0.10       5.88 f
+  U294/Y (OA22X1_RVT)                                     0.13       6.01 f
+  U736/Y (OAI221X1_RVT)                                   0.11       6.12 r
+  U293/Y (AO221X1_RVT)                                    0.07       6.19 r
+  lft_spd[7] (out)                                        0.00       6.19 r
+  data arrival time                                                  6.19
+
+  clock clk (rise edge)                                   8.00       8.00
+  clock network delay (ideal)                             0.00       8.00
+  output external delay                                  -0.75       7.25
+  data required time                                                 7.25
+  --------------------------------------------------------------------------
+  data required time                                                 7.25
+  data arrival time                                                 -6.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.06
+
+
+1

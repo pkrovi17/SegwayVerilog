@@ -1,0 +1,376 @@
+ECE551: Digital System Design and Synthesis
+                                     Fall 2026
+
+                 Verilog Basics
+                Structural Verilog
+Verilog Basics – Modules
+• Design encapsulated in a module                    This defines the module interface
+   • Between keywords module and endmodule
+   • Need a module name to refer to design           module decoder_2_to_4 (
+• Input and outputs are through ports                  input [1:0] A,   // input to decode
+                                                       output [3:0] D   // one-hot output
+   • Need port name and direction
+                                                     ) ;
+   • Can specify signal type and size
+                          module name   port names            Alternative port declaration style
+                                                                                           A[1:0]
+                 module decoder_2_to_4 (A, D) ;
+     port size                                                                               2
+port direction      input [1:0] A ;     // input to decode
+                    output [3:0] D ;    // one-hot output                                Decoder
+                                                                                          2-to-4
+                    assign D =     (A == 2'b00) ? 4'b0001 :
+                                   (A == 2'b01) ? 4'b0010 :       module                    4
+                                   (A == 2'b10) ? 4'b0100 :       contents
+     keywords                      (A == 2'b11) ? 4'b1000 ;                                 D[3:0]
+     bold     endmodule
+Verilog Basics – Ports
+• Port directions
+  • input
+  • output
+  • inout (bidirectional)
+
+• Port size
+  • Scalar (single bit) – default when no size is specified
+    • input cin;
+
+  • Vector (multiple bit) – specify size using [<range>] (before signal)
+    • output [7:0] out;     // Convention is MSB to LSB (left to right)
+    • input [0:4] in;       // Legal syntax
+    • inout [3:2] data;     // Range can be between any 2 numbers, don’t have to include 0
+Verilog Basics – Vectors
+• Signal name refers to the entire vector
+• Select parts of a vector using [<range>] after the signal name
+module lft_shift(src,shft_in,result,shft_out);
+                                                                                src
+  input [15:0] src;                                                                   16
+  input shft_in;
+  output [15:0] result;                                        shft_out     left shift     shft_in
+  output shft_out;
+                                                                                16
+  /////////////////////////////////////////////////////////////////        result
+  // Can access 15 LSB’s of src with [14:0] selector             //
+  // { , } is a process of concatenating two vectors to form one //
+  /////////////////////////////////////////////////////////////////
+  assign result = {src[14:0],shft_in};
+
+  assign shft_out = src[15];    // can access a single bit MSB with [15]
+
+endmodule
+Verilog Basics – Signal Types
+• Signal is physically voltage on a wire
+• Main synthesizable Verilog types:
+  • wire – for signals driven by purely combinational logic
+    • Needs a driver (e.g., primitive gate, module, I/O)
+  • reg – for inferring logic in procedural (always) block
+    • Retain value until a new one is assigned
+    • Can be changed in simulation by assigning a new value
+  Verilog Basics – Signal Types
+  • Signal is physically voltage on a wire
+  • Main synthesizable Verilog types:
+     • wire – for signals driven by purely combinational logic
+     • reg – for inferring logic in procedural (always) block
+module mult_accum (                                          module mult_accum_pipelined (
+   input [7:0] A_op, B_op,                                      input [7:0] A_op, B_op,
+   input [15:0] accum,                                          input [15:0] accum,
+   output [15:0] result                                         output [15:0] result
+);                                                           );
+   wire [15:0] product;                                         reg [15:0] product;
+
+  // First multiply to form product                            // First multiply to form product
+  assign product = A_op * B_op;     // infer HW multiplier     always @(posedge clk)
+                                                                  product <= A_op * B_op; // infer HW multiplier & FF
+  // Then accumulate to form result
+  assign result = accum + product;                             // Then accumulate to form result
+                                                               assign result = accum + product;
+endmodule
+                                                             endmodule
+  Verilog Basics – Signal Types
+  • Signal is physically voltage on a wire
+  • Main synthesizable Verilog types:
+     • wire – for signals driven by purely combinational logic
+     • reg – for inferring logic in procedural (always) block
+module mult_accum (                                          module mult_accum (
+   input [7:0] A_op, B_op,                                      input [7:0] A_op, B_op,
+   input [15:0] accum,                                          input [15:0] accum,
+   output [15:0] result                                         output [15:0] result
+);                                                           );
+   wire [15:0] product;                                         reg [15:0] product;
+
+  // First multiply to form product                            // First multiply to form product
+  assign product = A_op * B_op;     // infer HW multiplier     always_comb
+                                                                  product = A_op * B_op; // infer HW multiplier
+  // Then accumulate to form result
+  assign result = accum + product;                             // Then accumulate to form result
+                                                               assign result = accum + product;
+endmodule
+                                                             endmodule
+  Verilog Basics – Signal Types
+  • Signal is physically voltage on a wire
+  • Main synthesizable Verilog types:
+     • wire – for signals driven by purely combinational logic
+     • reg – for inferring logic in procedural (always) block
+module mult_accum (                                          module mult_accum_pipelined (
+   input [7:0] A_op, B_op,                                      input [7:0] A_op, B_op,
+   input [15:0] accum,                                          input [15:0] accum,
+   output [15:0] result                                         output [15:0] result
+);                                                           );
+   logic [15:0] product;                                        logic [15:0] product;
+
+  // First multiply to form product                            // First multiply to form product
+  assign product = A_op * B_op;     // infer HW multiplier     always @(posedge clk)
+                                                                  product <= A_op * B_op; // infer HW multiplier & FF
+  // Then accumulate to form result
+  assign result = accum + product;                             // Then accumulate to form result
+                                                               assign result = accum + product;
+endmodule
+                                                             endmodule
+
+  • SystemVerilog: logic – superset of reg and wire
+  Verilog Basics – Signal Types
+  • Signal is physically voltage on a wire
+  • Main synthesizable Verilog types:
+     • wire – for signals driven by purely combinational logic
+     • reg – for inferring logic in procedural (always) block
+module mult_accum (                                          module mult_accum_pipelined2 (
+   input [7:0] A_op, B_op,                                      input [7:0] A_op, B_op,
+   input [15:0] accum,                                          input [15:0] accum,
+   output [15:0] result                                         output logic [15:0] result
+);                                                           );
+   logic [15:0] product;                                        logic [15:0] product;
+
+  // First multiply to form product                            // First multiply to form product
+  assign product = A_op * B_op;     // infer HW multiplier     always @(posedge clk)
+                                                                  product <= A_op * B_op; // infer HW multiplier & FF
+  // Then accumulate to form result
+  assign result = accum + product;                             // Then accumulate to form result
+                                                               always @(posedge clk)
+endmodule                                                         result <= accum + product; // infer adder & FF
+
+                                                             endmodule
+  • SystemVerilog: logic – superset of reg and wire
+Verilog Basics – Signal Types
+• Signal is physically voltage on a wire
+• Main synthesizable Verilog types:
+  • wire – for signals driven by purely combinational logic
+  • reg – for inferring logic in procedural (always) block
+• SystemVerilog: logic – superset of reg and wire
+
+• Recommended to use logic in general
+  • Special case: use wire if you have multiple drivers with different strength
+Verilog Basics – Signal Value
+• logic, reg, wire: 4-state data types
+   Value                            Meaning                     Need high impedance for modeling
+     0         Logic zero, false condition                      of tri-state busses
+     1         Logic one, true condition
+                                                                              rd_eep
+     x         Unknown, either uninitialized or in contention
+                                                                EEPROM
+     z         High impedance. Not driven, or not connected
+                                                                         16            16
+
+
+                                                                                            dbus[15:0]
+                                                                                                         CPU
+                                                                              rd_ram
+                                    What value
+                               q    does q have
+                                                                  RAM
+           d                        prior to any                         16            16
+                                    positive clock
+                   clk              edge?
+
+           It is unknown: x (uninitialized)
+Verilog Basics – Signal Value
+• How to 4-value logic resolve?
+                                                                       S
+                  A                     A                      A           T OUT
+                                  OUT                OUT
+          OUT
+ A                B                     B                      B
+
+   A  0 1 x z         A   B   OUT           A   B   OUT    S       A   T   B   OUT
+  OUT 1 0 x X         0   0    0            0   0    0     0       0   z   z   z
+                      0   1    1            0   1    0     0       1   z   x   x
+                      1   1    1            1   1    1     0       x   z   1   1
+                      0   x   X             0   x   0      0       z   z   0   0
+                      0   z   X             0   z   0      1       0   0   1   x
+                      1   x   1             1   x   x      1       0   0   z   0
+                      1   z   1             1   z   x      1       1   1   z   1
+                                                           1       x   x   z   x
+                                                           1       z   x   0   x
+Verilog Basics – Numbers
+• General format is: <size>’<base><number>
+• Specify size based on smallest needed in the design
+  • If not specified, default size depends on simulator/machine
+• Available bases:
+  • d – decimal (default)                                Examples:
+  • h – hexadecimal (used very often)
+                                                         4’b1101 //4-bit binary number equal to 13
+  • b – binary (used often for smaller numbers)          10’h2E7 //10-bit # in hex equal to 2E7 (743)
+  • o – octal                                            10’hFE7 //10-bit # in hex equal to 3E7 instead of FE7
+• Number can have x or z characters as values            12’h13x //12-bit hex # with lower 4 bits unknown
+  • x = unknown                                          -16’h3A //16-bit # with -3A in hex (FFC6 in 2’s comp)
+  • z = high impedance
+• Supports negative numbers as well
+Verilog Basics – Signal Strength
+• Concept of drive strength supported to model certain CMOS circuits
+  that utilize contention
+• Not used often in general design
+                                                                         n1
+    Strength Level                  Meaning                    D              inv1          Q
+        supply       Strongest (like a supply VDD or VSS)
+
+        strong       Strong (default if not specified)
+                                                                     E               inv2
+
+
+         pull        Medium strength (like a pullup device)
+
+        weak         Weak, like a keeper (sustainer, leaker)
+                                                               not               inv1 (Q,n1)
+        highz        High impedance                            not (weak0,weak1) inv2 (n1,Q)
+Module Coding Styles
+• Modules can be specified in different ways
+  • Structural – connect primitives and modules
+  • Dataflow – use continuous assignments
+  • Behavioral – use initial and always blocks
+
+
+• A single module can use more than one method
+Structural Verilog
+• A schematic in text form (i.e., a netlist)
+• Build up a circuit from gates and modules
+  • Gates are primitives (part of the language)
+  • Modules are user-defined
+• Build up hierarchy from smaller pieces when we design
+  • Architecture: typically top-down
+  • Design & verification: typically bottom up
+                                       ALU
+
+                      Logic Ops        Adder       Shifter   Mux
+
+           xor            and           FA        majority
+Built-in Gate Primitives
+• Basic logic gates:                    bufif1 in        out    in          out   bufif0
+  • and, or, xor, nand, nor, xnor
+                                                    en
+  • buf, not                                                         en_n
+
+  • bufif0, bufif1, notif0, notif1      notif1 in        out    in          out   notif0
+
+                                                    en               en_n
+• Port order: output(s), then input(s), then control if it exists
+• Can optionally specify instance name , delay, strength
+   and (Z,A,B,C);                    // 3-input AND gate
+   and N25 (Z,A,B,C);                // name specified
+   and #10 (Z,A,B,X), (X,C,D,E);     // delay specified, 2 gates
+   and (weak0,weak1) #5 N30 (Z,A,B); // name, strength and delay specified
+Structural Verilog Example
+          majority                 module majority (major, V1, V2, V3) ;
+
+V1          N1                       output major ;
+     A0                              input V1, V2, V3 ;
+V2
+                                     logic N1, N2, N3;
+V2         N2
+     A1              Or0   major
+V3                                   and A0 (N1, V1, V2),
+                                         A1 (N2, V2, V3),
+                                         A2 (N3, V3, V1);
+V3          N3
+     A2
+V1                                   or Or0 (major, N1, N2, N3);
+
+                                   endmodule
+   Structural Verilog Example
+   • Can build modules from other modules
+      • Instance name is required when instantiating user-defined modules
+              full_add                  module full_add (A, B, Ci, S, Co) ;
+       A                                 input A, B, Ci ;
+       B                     S           output S, Co ;
+       Ci
+                                         // Sum is XOR of inputs
+      A                                  xor iSUM (S, A, B, Ci);         Connect by reference order
+      B        majority     Co
+      Ci                                 // Co is the majority of inputs
+                                         majority iCO(.V1(A), .V2(B), .V3(Ci), .major(Co));
+
+                                        endmodule               Connect by name
+module majority (major, V1, V2, V3) ;
+                                         Alternative is to connect by order…
+                                             majority iCO(Co, A, B, Ci);
+Port Connections
+• Positional / connect by order
+  • Ok for designs with very few ports & interchangeable input ports (e.g., and/or/xor)
+• Explicit / connect by name
+  • Helps avoid connection errors, no need to remember port order, easier to read
+  • .<port name>(<signal name>)
+• Empty port connections
+  • Input: high impedance
+  • Output: not used
+Example: module full_add(A,B,Ci,S,Co);
+full_add iadd(.A(X),.B(Y),.S(Z),.Co(ov));    //Ci is high impedance
+full_add iadd(.A(X),.B(Y),.Ci(1’b0).S(Z), ); //Output Co unused
+
+full_add iadd(.A(X),.B(Y),.Ci(1’b0).S(Z), .Co()); //Better code
+Structural Verilog Example
+                                                                                     RCA8
+• Can instantiate modules as a vector                           B[7] A[7]   B[6] A[6] …     B[1] A[1]   B[0] A[0]
+
+
+
+module RCA8 (                                          Cout     full_add    full_add   …    full_add    full_add    Cin
+   input [7:0] A,B,        // two 8-bit vectors to be added
+   input        Cin,       // An optional carry in bit
+   output [7:0] S,         // 8-bit sum
+                                                                     S[7]     S[6]     …       S[1]       S[0]
+   output       Cout       // carry out
+);
+
+  // Co of lesser significant bit form Cin of more significant bit
+  logic [7:0] Carries;
+
+  // Implement Full Adder as structural Verilog
+  full_add add0(.A(A[0]), .B(B[0]), .Cin(Cin),        .S(S[0]), .Cout(Carries[0]));
+  full_add add1(.A(A[1]), .B(B[1]), .Cin(Carries[0]), .S(S[1]), .Cout(Carries[1]));
+  full_add add2(.A(A[2]), .B(B[2]), .Cin(Carries[1]), .S(S[2]), .Cout(Carries[2]));
+  full_add add3(.A(A[3]), .B(B[3]), .Cin(Carries[2]), .S(S[3]), .Cout(Carries[3]));
+  ...
+  full_add add7(.A(A[7]), .B(B[7]), .Cin(Carries[6]), .S(S[7]), .Cout(Carries[7]));
+
+  buf iBF(Cout, Carries[7]);
+
+endmodule
+Structural Verilog Example
+                                                                                     RCA8
+• Can instantiate modules as a vector                           B[7] A[7]   B[6] A[6] …     B[1] A[1]   B[0] A[0]
+
+
+
+module RCA8 (                                          Cout     full_add    full_add   …    full_add    full_add    Cin
+   input [7:0] A,B,        // two 8-bit vectors to be added
+   input        Cin,       // An optional carry in bit
+   output [7:0] S,         // 8-bit sum
+                                                                     S[7]     S[6]     …       S[1]       S[0]
+   output       Cout       // carry out
+);
+
+  // Co of lesser significant bit form Cin of more significant bit
+  logic [7:0] Carries;
+
+  // Implement Full Adder as structural Verilog
+  full_add iFA[7:0](.A(A), .B(B), .Cin({Carries[6:0],Cin}), .S(S), .Cout(Carries));
+
+  buf iBF(Cout, Carries[7]);
+
+endmodule
+Why Know Structural Verilog?
+• DUT code will mostly be dataflow or behavioral
+• Testbenches primarily in behavioral
+
+• What needs structural Verilog?
+  • Building hierarchy (instantiating blocks to form higher level functional blocks)
+  • Synthesis tools output structural Verilog (gate-level netlist)
+    → you need to be able to read this output
+

@@ -1,0 +1,39 @@
+GOOD1: zero in should gi
+GOOD2: PID_cntrl should
+GOOD3: ss_tmr should be
+GOOD4: D_term in proper
+GOOD5: I_term should be
+GOOD6: I_term should be
+GOOD7: I_term should be
+GOOD8: I_term should be
+GOOD9: I_term should be
+GOOD10: I_term should be
+GOOD11: PID_cntrl should
+GOOD12: I_term should be
+GOOD13: ss_tmr should be
+YAHOO!! all tests passed
+
+ve zero out
+
+be P_term only
+
+0x00 since pwr_up=0
+
+range
+
+5
+
+0x11
+
+saturated at Ox7FF
+
+5
+
+0, P_term should be 0x0090
+Ox7FFA, P_term should be 0x7B80
+be saturated negative
+
+0x7801, P_term should be 0x0240
+0x01
+
+...my name is Pranav Krovi

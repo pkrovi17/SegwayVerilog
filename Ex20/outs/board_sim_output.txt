@@ -1,0 +1,2 @@
+PASS: board request counter and all four LED selections (counter seeded near rollover for simulation).
+/tmp/ex20-sim/A2D_board_tb.sv:39: $finish called at 43181000 (1ps)

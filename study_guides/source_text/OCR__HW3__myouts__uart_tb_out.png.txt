@@ -1,0 +1,44 @@
+# Loading project hw3
+
+Modelsim> vsim work.UART_tb
+
+[# vsim work.UART _tb
+
+[# Start time: 19:49:25 on Oct 12,2026
+/# Loading sv_std.std
+
+[# Loading work.UART_tb
+
+|# Loading work .UART_tx
+
+|# Loading work .UART_rx
+
+VSiM 2> run -all
+
+[# PASS: sen clr_rdy tested=1
+[# PASS: sent clr_rdy tested=0
+
+[# PASS: sent clr_rdy
+
+[# PASS: sent clr_rdy
+
+[# PASS clr_rdy tested=0
+
+[# PASS clr_rdy
+
+[# PASS clr_rdy tested=0
+
+[# PASS clr_rdy tested=1
+
+|# Pranav Krovi (pkrovi): all 8 UART loopback tests passed!
+
+[# ** Note: $finish /home/pkrovi /Downloads/ eceS51/Hi3/UART tb. sv(115)
+
+[#  Time: 8453931 ns Iteration: 0 Instance: /UART_tb
+
+#1
+
+|# Break in Module UART_tb at /home/pkrovi/Downloads/ecess1/Hi3/UART_tb.sv line 115
+
+EI'ES
+

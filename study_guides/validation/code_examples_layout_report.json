@@ -1,0 +1,74 @@
+[
+  {
+    "page": 1,
+    "column": 1,
+    "font_pt": 9.2,
+    "code_pt": 8.2,
+    "height": 664.1,
+    "remaining": 57.9,
+    "code_width": 201.75
+  },
+  {
+    "page": 1,
+    "column": 2,
+    "font_pt": 8.924,
+    "code_pt": 7.954,
+    "height": 716.88,
+    "remaining": 5.12,
+    "code_width": 272.07
+  },
+  {
+    "page": 2,
+    "column": 1,
+    "font_pt": 9.2,
+    "code_pt": 8.2,
+    "height": 700.65,
+    "remaining": 21.35,
+    "code_width": 226.36
+  },
+  {
+    "page": 2,
+    "column": 2,
+    "font_pt": 9.2,
+    "code_pt": 8.2,
+    "height": 695.25,
+    "remaining": 26.75,
+    "code_width": 211.59
+  },
+  {
+    "page": 3,
+    "column": 1,
+    "font_pt": 9.2,
+    "code_pt": 8.2,
+    "height": 687.75,
+    "remaining": 34.25,
+    "code_width": 221.44
+  },
+  {
+    "page": 3,
+    "column": 2,
+    "font_pt": 9.2,
+    "code_pt": 8.2,
+    "height": 703.55,
+    "remaining": 18.45,
+    "code_width": 241.12
+  },
+  {
+    "page": 4,
+    "column": 1,
+    "font_pt": 9.2,
+    "code_pt": 8.2,
+    "height": 675.75,
+    "remaining": 46.25,
+    "code_width": 241.12
+  },
+  {
+    "page": 4,
+    "column": 2,
+    "font_pt": 9.2,
+    "code_pt": 8.2,
+    "height": 674.65,
+    "remaining": 47.35,
+    "code_width": 241.12
+  }
+]

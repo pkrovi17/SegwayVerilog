@@ -1,0 +1,79 @@
+File Edit View Compile Simulate Add Wave Tools Layout Bookmarks Window Help
+A" RN N2IO-HEN | CHEH || YT e wopsH ELENEN B S 1O
+& sim - Default 4 @ x| |$a Objects
+v/ Instance Design unit_|Design unittype |Top Category _|Visibility _|Total coverage v|Name
+{ PID_Math_to PID_Math_th Module DU Instance = o
+&8 DUT PID_Math  Module DU Instance 1 pich 1t
+HINTIALLT PID_Math_th Process o
+2o sta st ViPackage Package o
+|2 #vsim_capacitys Capacity Statitics o
+£ Processes (Active)
+v|Name
+HINTIALAT
+oo B projest | & sm D)
+3 Transcript
+add wave -radix decinal sin:/PID_Math_tb/ptch
+add wave -radix decinal sin:/PID_Math_tb/integrator
+add wave -radix decinal sin:/PID_ Math_tb/ptch_rt
+add wave -radix decinal sim:/PID_Math_tb/PID_cntrl
+un 5120 ns
+un -all
+1
+|# Break in Module PID_Math_tb at /home/pkrovi/Downloads /ecess1/HN2/PID_ Math_th.sv line 90
+un 5120 ns
+un -all
+restart
+un 5120 ns
+un -all
+
+41
+
+# Break in Module PID_Math_tb at /hone/pkrovi/Donloads/ece551/HN2/PID_Math_tb.sv line 90
+
+0psto 11229366 ps
+
+Ln.
+
+90 Col: 0
+
+READ [Project:hw2 [Now: 5,240 ns Delta:0
+
+EINTIALELT
+
+Value [Kind
+
+63 Pack,
+
+Type (itered)
+Initial
+
+Layout [simulate
+
+Mode
+
+Internal
+
+State
+Active
+
+Order
+1
+
+4 x
+e[ low[ 1 »
+
+4 x
+
+Parent Paih cii
+
+IPID_Math_tb
+
+2 3-4-F o i T U T B || & & e e & || 36 4€ B | Searcn v B | Qe L an LN @
+sz CEE
+&l
+:"p‘DiMaﬂumme 53 ““““““
+>
+o Now 5mnuups
+@ie
+h]adder_bsv O
+4 x

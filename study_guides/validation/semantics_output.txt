@@ -1,0 +1,3 @@
+PASS: old-value NBA pipeline; inertial net delay; transport NBA; ring self-trigger
+ring transitions after EN: blocking=1 nonblocking=6
+study_guides/validation/semantics_tb.sv:29: $finish called at 140000 (1ps)

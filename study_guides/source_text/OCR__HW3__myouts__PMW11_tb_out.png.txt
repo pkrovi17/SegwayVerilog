@@ -1,0 +1,40 @@
+VSIM7>Tun -all
+PASS: duty=0x000, high clocks/period
+PASS: duty=0x001, high clocks/period
+PASS: duty=0x03f, high clocks/period
+PASS: duty=0x040, high clocks/period
+PASS: duty=0x041, high clocks/period
+PASS: duty=0x200, high clocks/period
+PASS: duty=0x400, high clocks/period
+PASS: duty=0x600, high clocks/period
+PASS: duty=0x7bf, high clocks/period: PWMI=1919 PWM2=0
+PASS: duty=0x7co, high clocks/period 920 PM:
+PASS: duty=0x7ff, high clocks/period =1983 PiM2=(
+ALL 11 PWM duty tests passed (45056 clock checks)!
+
+** Note: $finish /home/pkrovi /Downloads/ eceS51/Hi3/PAM11_th. sv(100)
+
+Tine: 903134 ns Iteration: 0 Instance: /PWMI1_tb
+
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+
+1
+Break in Module PM11_tb at /home/pkrovi/Downloads/eceS51/H3/PM11_tb.sv line 100
+
+vsin g>]
+

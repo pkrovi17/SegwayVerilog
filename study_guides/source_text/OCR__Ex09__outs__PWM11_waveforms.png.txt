@@ -1,0 +1,40 @@
+Ex09 PWM1l - simulated waveforms
+
+Source: Icarus Verilog VCD | 50 MHz clock | 2048 clocks per period | NONOVERLAP = 64
+
+duty = 0x000 (0/2048) absolute time 40.970 to 81.930 us
+PuM1
+PuM2
+PUM_synch
+ovr_I_blank
+0 512 1024 1536 2048
+Clock cycles from period boundary
+duty = 0x200 (512/2048) absolute time 450.570 to 491.530 us
+PuM1
+PuM2
+PUM_synch
+ovr_I_blank
+0 512 1024 1536 2048
+Clock cycles from period boundary
+duty = 0x400 (1024/2048) absolute time 532.490 to 573.450 us
+PuM1
+PuM2
+PUM_synch
+ovr_I_blank
+0 512 1024 1536 2048
+Clock cycles from period boundary
+duty = 0x600 (1536/2048) absolute time 614.410 to 655.370 us
+PuM1
+PuM2
+PUM_synch
+ovr_I_blank
+0 512 1024 1536 2048
+Clock cycles from period boundary
+duty = Ox7FF (2047/2048) absolute time 860.170 to 901.130 us
+PuM1
+PuM2
+PUM_synch
+ovr_I_blank
+0 512 1024 1536 2048
+
+Clock cycles from period boundary

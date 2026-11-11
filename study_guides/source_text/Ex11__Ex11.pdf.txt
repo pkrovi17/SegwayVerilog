@@ -1,0 +1,155 @@
+     Exercise 11: UART Transmitter
+    Universal Asynchronous Receiver / Transmitter (UART)
+    • For asynchronous serial communication
+    • The transmitter (TX) and receiver (RX) have an agreed upon Baud rate and
+       frame format
+        • Standard Baud rates: 4800, 9600, 19200, 38400, 57600, 115200, 230400, 460800, 921600
+        • Frame formats: 1 start bit         5-9 data bits       0 or 1 parity bit 1 or 2 stop bit
+
+    • Transmitter sits idle (high) until told to transmit.
+
+    • We will use what’s commonly referred to as the 8N1 format
+           •   8 data bits, no parity bit, 1 stop bit
+                                        1
+                                       Baud
+     TX                                                                                               IDLE or
+               IDLE    START     D0     D1      D2       D3     D4     D5      D6     P
+                                                                                      D7    STOP
+    line                                                                                              START
+
+
+    • We will use Baud rate = 9600                      Baud rate 9600 with 50MHz clock ➔ 5208 divider ➔ 13-bit
+
+1
+    Exercise 11: UART Transmitter
+    • You are designing the datapath and FSM for this UART transmitter
+       • The UART transmitter will receive an 8-bit tx_data, and a 1-bit trmt signal to
+           tell it to transmit
+       •   The tx_data should be put into the 8N1 frame format, and transmitted on to
+           the TX line using a 9600 Baud rate
+       •   tx_done should be asserted once the data has been transmitted
+
+                                    trmt
+                          tx_data[7:0]                  8-bit UART                 TX
+
+                                tx_done
+                                                        Transmitter
+
+
+                                                        clk      rst_n
+
+           Signal         Dir      Description
+           clk,rst_n      in       50MHz system clock & active low reset
+           TX             out      Serial data output
+           trmt           in       Asserted for 1 clock to initiate transmission
+           tx_data[7:0]   in       Byte to transmit
+           tx_done        out      Asserted when byte is done transmitting. Stays high till the next byte transmits.
+2
+    UART TX Design
+    Suggested process:
+    • Think about what kind of things need to be done
+      → what datapath elements can do that for you?
+    • Then think about when these things need to be done
+      → how should the FSM control signals going to the data path?
+
+    For example:
+    • Bits are transmitted 1 bit at a time → Need registers to hold data to be
+        transmitted
+    •   When Baud period is up, transmit next bit → Need counter for Baud rate
+    •   Once all bits are transmitted, assert tx_done → Need counter to keep track of
+        how many bits have transmitted
+
+    • Are there different “phases” that the circuit need to work in?
+        •   Yes. Need to wait for input, and we don’t do anything in this phase. Then need to
+            transmit. So we will need to have an FSM.
+        •   Figure out the datapath elements first before looking at when to change the control
+3
+            signals.
+    UART TX Design
+    • Need:                                              A
+       • Registers to hold data to be transmitted
+
+    There are a few possible designs:
+    A. Can have a register load in the frame (all 10
+       bits) and use a MUX to select which bit to
+       output onto TX
+    B. Can have a shift register to load in the          B
+       frame (all 10 bits) and shift right every time.
+       TX is just the value at bit 0.
+    C. Shift register like B, but can save 1 register
+       for the stop bit and just tie a static 1’b1
+       (since line is high during idle)
+                                                         C
+    • Should pick the most area efficient /
+       performant design!
+
+
+4
+    UART TX Design
+    • Need:
+      • Registers to hold data to be transmitted
+      • Counter for baud rate – sets up when to put data on the line
+      • Counter for which bit is being transmitted
+
+    • You know how to implement a counter, but how many bits do you
+     need? Do you need a reset? Do you need an enable? Do you need a
+     parallel load? Do you want to count up or count down?
+
+                Baud counter                                 Bit counter
+        Baud rate = 9600
+                                                  10 bits in a frame to transmit
+        System clk = 50MHz
+                                                  → 4-bit counter
+         → 50MHz / 9600 = 5208
+         → 13-bit counter
+                                                  • Start from 0, increment every
+                                                    time we transmit a new bit
+        • When enabled, keep counting
+                                                  • Keep track of which bit so we
+          from 0 to 5208
+                                                    know when the frame is done
+        • Send out a signal every time the
+          Baud period is reached
+5
+    UART TX Design
+     • Need:
+        • Registers to hold data to be transmitted
+        • Counter for baud rate – sets up when to put data on the line
+        • Counter for which bit is being transmitted
+        • FSM to manage control signals – when to do what
+
+    Possible topology:
+    This is recommended.
+    But you are free to use
+    your own design as
+    long as it has an FSM
+    and operates the same.
+
+    Remember that the
+    lower the area the
+    better!
+
+
+
+
+6
+    Exercise 11: UART Transmitter
+    • Your design should be called UART_tx
+       • Implement the datapath
+       • Implement the FSM
+          • What is the minimum number of states you need?
+    • You should follow the FSM coding style introduced in the lecture videos
+
+    • Once your design is done, make a simple testbench for it.
+       • Just instantiate your transmitter and send a few bytes. Verify correct
+           functionality (including baud rate) by looking at the waveform.
+       •   We will test it again later when you have your UART receiver as well.
+
+
+    • Submit: UART_tx.sv
+
+
+
+
+7
+

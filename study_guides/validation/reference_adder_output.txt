@@ -1,0 +1,2 @@
+PASS: 512 cases
+study_guides/ECE551_Example_Modules.sv:221: $finish called at 512000 (1ps)

@@ -1,0 +1,2 @@
+Pranav Krovi (pkrovi): all 1500 balance control vectors passed!
+balance_cntrl_chk_tb.sv:49: $finish called at 14996000 (1ps)

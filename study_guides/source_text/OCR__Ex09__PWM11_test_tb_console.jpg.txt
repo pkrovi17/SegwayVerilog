@@ -1,0 +1,23 @@
+File Edit View Compile Simulate Add Transcript Tools Layout Bookmarks Window Help
+
+T D2O-NEN|SRBAK| Yt dw F wpl AHBHAS (AN - - & || LevouSinilate v HEET LY XOX e 3e - IR
+&) sim- Defaut + @ x| |§u Objects + @ x| | ga] Wave - Default + ol x
+" nsiance Designunit_[Design unitype | Top Category  |Visibity | Totalcoverage v Name Vaiue [Kind _[viode o | ]
+PWIIL st PWNLLtes.. Module DUInstance  saco=ct ;
+o iDUT PWM11_test Module DU Instance +acc=<iu. - T T T T T T T T T T T
+FALWAYSHS  PWAILL tes.. Process sacomct 3
+NTALEIS PWNILtes.. Process = o
+oo std std ViPackage Package +acc=<iu. o 2
+I&X #vsim_capacity# Capacity Statistics +acc=<fu, o
+5 A— i i |
+mmﬁmﬁﬁmmmmmmmmmmmmmmmmmmm
+% Processes (Actve) +ax
+v/ Name Type (iered) Sae Joder [paenipan __[ci
+NTALAS nital e 1 PWLesih
+o] Now smaups
+&/
+
+1
+# Break in Module PHMI1_test_tb at /home/pkrovi/Downloads/ecesS1/Ex09/PM11 test_th.sv Line 88
+
+Project: EX09 [Now: 6514 ns Delta: 0 SIMIPWMLL_test_tb/#INITIAL¥15

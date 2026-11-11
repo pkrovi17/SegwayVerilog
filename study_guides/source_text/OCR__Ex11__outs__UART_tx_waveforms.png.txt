@@ -1,0 +1,46 @@
+Ex11 UART transmitter - actual Icarus Verilog waveforms
+8N1 | 50 MHz clock | 5208 clocks/bit = 104.16 us | each frame = 1.0416 ms
+
+Byte 0x00 | start at 0.09 us | tx_done asserts at 1041.69 us
+START Do D1 D2 D3 D4 D5 D6 D7 STOP
+
+TX 4’7
+
+0 1 2 3 4 5 6 7 8 9 10
+
+Byte OXFF | start at 1041.77 us | tx_done asserts at 2083.37 us
+START Do D1 D2 D3 D4 D5 D6 D7 STOP
+
+TX 4’7
+
+0 1 2 3 4 5 6 7 8 9 10
+
+Byte OxA5 | start at 2083.45 us | tx_done asserts at 3125.05 us
+START Do D1 D2 D3 D4 D5 D6 D7 STOP
+
+e r 1
+
+0 1 2 3 4 5 6 7 8 9 10
+
+Byte 0x3C | start at 3125.13 us | tx_done asserts at 4166.73 us
+START Do D1 D2 D3 D4 D5 D6 D7 STOP
+
+eennnnssn— D
+
+0 1 2 3 4 5 6 7 8 9 10
+
+Byte 0x81 | start at 4166.81 us | tx_done asserts at 5208.41 us
+START Do D1 D2 D3 D4 D5 D6 D7 STOP
+
+L L e R
+
+0 1 2 3 4 5 6 7 8 9 10
+
+Byte Ox7E | start at 5210.53 us | tx_done asserts at 6252.13 us
+START Do D1 D2 D3 D4 D5 D6 D7 STOP
+
+TX
+
+0 1 2 3 4 5 6 7 8 9 10
+
+Horizontal axis: bit periods from accepted request

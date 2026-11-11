@@ -1,0 +1,6 @@
+PASS: RTL elaborates with fast_sim=0.
+PASS: RTL elaborates with fast_sim=1.
+PASS: Tcl command structure is complete (not a Design Compiler execution).
+PASS: local RTL copies match Ex16; earlier files unchanged.
+NOT RUN: Design Compiler synthesis; dc_shell and the SAED32 library are unavailable locally.
+PENDING: area.rpt, timing_min.rpt, timing_max.rpt, balance_cntrl.vg.

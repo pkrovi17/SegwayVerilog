@@ -1,0 +1,51 @@
+w LR e U SRR S ST AT Was auLEasiis
+# Compile of steer_en_SM_extra_tb.sv was successful
+# Conpile of steer_en_SM_tb.sv was successful.
+
+# Conpile of UART_Ix.sv was successful
+
+# Conpile of UART_tb.sv was successful
+
+# Conpile of UART_tx.sv was successful
+
+# Conpile of UART_tx_tb.sv was successful
+
+# 12 conpiles, 0 failed with no errors
+
+vsin work. steer_en sM_tb
+
+# vsin work. steer_en_SM_tb
+
+# Start time: 22:06:42 on Oct 12,2026
+
+# Loading sv_std.std
+
+# Loading work. steer_en_SM_tb
+
+# Loading work. steer_en_sM
+
+Modelsim> run -all
+
+Yahoo! test passed!
+
+However, We did not test that when in nornal mode with
+steering enabled you transition to the initial state and
+
+assert rider_off if sum_lt_min occurs. You should test that
+
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+¢
+# ** Note: $stop /home/pkrovi /Downloads/eces51/Hi3/steer_en_SM_tb.sv(159)
+#  Time: 320 ns Iteration: 1 Instance: /steer_en SM_tb
+
+# Break in Module steer_en SM_th at /home/pkrovi/Downloads/ecess1/Hi3/steer_en_SM_th.sv line 159
+
+vsin 35|
+
+Project:hw3 [Now: 320 ns Delia: 1 'simisteer_en_SM_tb/#INITIAL¥Z

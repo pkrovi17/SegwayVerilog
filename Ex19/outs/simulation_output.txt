@@ -1,0 +1,20 @@
+PASS: note 0, 131072 fast clocks, correct frequency
+PASS: note 1, 131072 fast clocks, correct frequency
+PASS: note 2, 131072 fast clocks, correct frequency
+PASS: note 3, 196608 fast clocks, correct frequency
+PASS: note 4, 65536 fast clocks, correct frequency
+PASS: note 5, 262144 fast clocks, correct frequency
+PASS: note 5, 262144 fast clocks, correct frequency
+PASS: note 4, 65536 fast clocks, correct frequency
+PASS: note 3, 196608 fast clocks, correct frequency
+PASS: note 2, 131072 fast clocks, correct frequency
+PASS: note 1, 131072 fast clocks, correct frequency
+PASS: note 0, 131072 fast clocks, correct frequency
+PASS: note 0, 131072 fast clocks, correct frequency
+PASS: note 1, 131072 fast clocks, correct frequency
+PASS: note 2, 131072 fast clocks, correct frequency
+PASS: note 0, 131072 fast clocks, correct frequency
+PASS: note 1, 131072 fast clocks, correct frequency
+PASS: note 2, 131072 fast clocks, correct frequency
+Pranav Krovi (pkrovi): all 18 piezo note checks and mode/priority checks passed!
+Ex19/piezo_drv_tb.sv:138: $finish called at 80954200000 (1ps)

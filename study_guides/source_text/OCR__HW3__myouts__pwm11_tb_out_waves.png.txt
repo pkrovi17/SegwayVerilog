@@ -1,0 +1,62 @@
+File Edit View Compile Simulate Add Wave Tools Layout Bookmarks Window Help
+
+CERE CHEN|| CHERE| B e wopsHE BB AS WD - Layout [Simulate - <[ =-
+
+& sim - Defaut + & x| [4a Objects + 2 x| [l
+v/ nstance Design unit_[Design unitiype [Top Category _ |Visibilfy [Tl coverage v/Name Vaiue [Kind_|Mode € B iiow 3] »
+o PWM1L_tb PWMLLth  Module DU Instance
+i+ iDUT PWM11 Module DU Instance
+FALWAYSHLS  PWMILt  Process
+HNTALELT PWM1Lth  Process
+e s ViPackage Package
+5 #vsim_capacitt Capaciy Statstcs +ace=ctu
+
+w
+&
+
+LTIV Y DY L RS W SIRIN I} S |
+
+2
+
+&8 Processes (Active) + X
+¥|Name Type (itered) State Order _|Parent Paih ciy
+HINTIALF17. Initial Active 1 PWMLL_th
+
+> o Now | 903134000 ps
+@se
+
+4 x
+
+N
+
+A Transcript
+Conpile of PWHI1_tb.sv was successful
+Compile of steer_en_SM.sv was successful
+Compile of steer_en_SM_extra_tb.sv was successful
+Compile of steer_en_sM_shell.sv was successful
+Compile of steer_en_SM_tb.sv was successful
+Conpile of UART_x.sv was successful
+Conpile of UART_tb.sv was successful
+Compile of UART_tx.sv was successful
+Conpile of UART_tx_tb.sv was successful
+13 conpiles, 0 failed with no errors
+
+vsin work.PMI1_tb
+
+{sm s
+
+& Proj
+
+LR
+
+add wave -position insertpoint \
+sim: /PAML1_th/PaM1 \
+sim: /PAML1_th/PAM2 \
+sim: /PAML1_th/PAM_synch \
+sim: /PAML1_th/ovr_I_blank
+un -all
+
+41
+|# Break in Module PAM11_th at /home/pkrovi/Downloads/ecess1/Hi3/PMI1_tb.sv line 100
+
+0 ps 10 979880522 ps Project:hw3 [Now: 903,134 ns Delta: 0 SImPWMLL_bH#INTIALELT

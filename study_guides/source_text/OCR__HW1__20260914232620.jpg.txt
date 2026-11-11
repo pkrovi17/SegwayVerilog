@@ -1,0 +1,29 @@
+Fie Edit View Compile Simulate Add Wave Tools Layout Bookmarks Window Help
+
+BEN HEEHEH| Yt e e WO Layout [simulate [ & RCTREETE R D G i A g Qaeunn| [ LN &
+& sim-Default +/ @) x|| [4a Objects EEEIT EEE
+
+| insiance Design unit_[Design unittype [Top Category |Visitiity [Total coverage v]Name Vaiue [Kind_|Mode 10231 ps o | I 1
+
+4t th Module DU Instance +acc=<u.
+o dut dff Module DU Instance +act ‘ +
+iNTAIS b o = e
+s Vbedage  padage
+I&X #vsim_capacity# Capacity Statistics +ace=<u
+8 Processes (Acive) vex
+</ Nane e ieres) [Sme__[ovder_[parenpan
+TS i e 1
+
+Cursor 1 231ps =
+
+B by [BProec | &sm i
+
+A Transcript P
+[# Loading project HWL
+vsin work. tb
+
+#1
+|# Break in Module tb at /home/pkrovi/Downloads/ecess1/Hw1/th.sv line 27
+
+0psio64ns Project: HWL [Now: 47 ns Delta: 0 SImDHINTIAL#18
+

@@ -1,0 +1,20 @@
+[
+  {
+    "document": "ECE551_Midterm_Cheat_Sheet",
+    "pages": 2,
+    "size": "US Letter",
+    "text_inside_page": true
+  },
+  {
+    "document": "ECE551_Midterm_Code_Examples",
+    "pages": 4,
+    "size": "US Letter",
+    "text_inside_page": true
+  },
+  {
+    "document": "ECE551_Crash_Course",
+    "pages": 14,
+    "size": "US Letter",
+    "text_inside_page": true
+  }
+]

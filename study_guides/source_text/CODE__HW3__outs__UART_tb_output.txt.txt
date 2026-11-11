@@ -1,0 +1,15 @@
+HW3 - Pranav Krovi (pkrovi)
+UART_tb: PASS
+Actual Icarus Verilog output
+
+VCD info: dumpfile UART.vcd opened for output.
+PASS: sent=0x00 received=0x00, clr_rdy tested=1
+PASS: sent=0xff received=0xff, clr_rdy tested=0
+PASS: sent=0xa5 received=0xa5, clr_rdy tested=0
+PASS: sent=0x5a received=0x5a, clr_rdy tested=1
+PASS: sent=0x01 received=0x01, clr_rdy tested=0
+PASS: sent=0x80 received=0x80, clr_rdy tested=1
+PASS: sent=0x3c received=0x3c, clr_rdy tested=0
+PASS: sent=0x7e received=0x7e, clr_rdy tested=1
+Pranav Krovi (pkrovi): all 8 UART loopback tests passed!
+UART_tb.sv:115: $finish called at 8453931000 (1ps)

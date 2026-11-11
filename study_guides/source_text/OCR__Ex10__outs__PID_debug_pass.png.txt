@@ -1,0 +1,32 @@
+Ex10 - PID controller: Pranav Krovi
+Actual Icarus Verilog simulation transcript
+
+$ iverilog -g2012 -s PID_dbg_tb -o PID_dbg_tb.vvp PID.sv PID_dbg_tb.sv
+$ vvp -n PID_dbg_tb.vvp
+
+: zero in should give zero out
+
+: PID_cntrl should be P_term only
+
+ss_tmr should be ©0x00 since pwr_up=0
+
+: D_term in proper range
+
+: I_term should be 5
+
+I_term should be 0x11
+
+: I_term should be saturated at Ox7FF
+
+: I_term should be 5
+
+GOOD9: I_term should be @, P_term should be ©x0090
+GOOD10: I_term should be Ox7FFA, P_term should be ©x7B8@
+GOOD11: PID_cntrl should be saturated negative
+
+GOOD12: I_term should be 0x7801, P_term should be 0x0240
+GOOD13: ss_tmr should be 0x01
+
+YAHOO!! all tests passed...my name is Pranav Krovi
+
+Ex10/PID_dbg_tb.sv:181: $stop called at 10948195000 (1ps)

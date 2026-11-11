@@ -1,0 +1,586 @@
+            1 GB (Free   1 GB)
+Work Filesystem:    /userspace/pkrovi mounted to userspace.cae.wisc.edu:/userspace/pkrovi
+Tmp Filesystem:     /tmp mounted to tmpfs
+Work Disk:           25 GB (Free  23 GB)
+Tmp Disk:            15 GB (Free  14 GB)
+
+CPU Load: 0%, Ram Free: 0 GB, Swap Free: 1 GB, Work Disk Free: 23 GB, Tmp Disk Free: 14 GB
+dc_shell> source balance_cntrl.dc
+Loading db file '/srv/auto/apps/saed32_edk/2023/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Loading db file '/srv/auto/apps/synopsys-2026/syn/Y-2026.03/libraries/syn/gtech.db'
+Loading db file '/srv/auto/apps/synopsys-2026/syn/Y-2026.03/libraries/syn/standard.sldb'
+  Loading link library 'saed32rvt_ss0p95v125c'
+  Loading link library 'gtech'
+Loading db file '/srv/auto/apps/saed32_edk/2023/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Warning: Overwriting design file '/srv/auto/apps/saed32_edk/2023/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'. (DDB-24)
+Loaded 0 designs.
+Running PRESTO HDLC
+Compiling source file ./PID.sv
+Compiling source file ./SegwayMath.sv
+Compiling source file ./balance_cntrl.sv
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Presto compilation completed successfully. (balance_cntrl_fast_sim0)
+Module: balance_cntrl_fast_sim0, Ports: 75, Input: 50, Output: 25, Inout: 0
+Module: balance_cntrl_fast_sim0, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module balance_cntrl_fast_sim0 report end. (ELAB-965)
+Elaborated 1 design.
+Current design is now 'balance_cntrl_fast_sim0'.
+Information: Building the design 'PID' instantiated from design 'balance_cntrl_fast_sim0' with
+	the parameters "fast_sim=0". (HDL-193)
+Warning:  ./PID.sv:27: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./PID.sv:32: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./PID.sv:64: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./PID.sv:70: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./PID.sv:71: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./PID.sv:77: unsigned to signed assignment occurs. (VER-318)
+
+Inferred memory devices in process in routine 'PID_fast_sim0' in file
+	 ./PID.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|   integrator_reg    | Flip-flop |  18   |  Y  | N  | None  | Async | N  |  36  |
+|    long_tmr_reg     | Flip-flop |  27   |  Y  | N  | None  | Async | N  |  45  |
+==================================================================================
+Presto compilation completed successfully. (PID_fast_sim0)
+Module: PID_fast_sim0, Ports: 57, Input: 37, Output: 20, Inout: 0
+Module: PID_fast_sim0, Registers: 45, Async set/reset: 45, Sync set/reset: 0
+Information: Module PID_fast_sim0 report end. (ELAB-965)
+Information: Building the design 'SegwayMath'. (HDL-193)
+Warning:  ./SegwayMath.sv:28: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./SegwayMath.sv:33: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./SegwayMath.sv:35: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./SegwayMath.sv:37: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./SegwayMath.sv:39: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./SegwayMath.sv:43: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./SegwayMath.sv:44: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./SegwayMath.sv:45: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./SegwayMath.sv:47: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./SegwayMath.sv:49: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./SegwayMath.sv:52: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./SegwayMath.sv:57: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./SegwayMath.sv:59: unsigned to signed assignment occurs. (VER-318)
+Presto compilation completed successfully. (SegwayMath)
+Module: SegwayMath, Ports: 59, Input: 34, Output: 25, Inout: 0
+Module: SegwayMath, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module SegwayMath report end. (ELAB-965)
+Current design is 'balance_cntrl_fast_sim0'.
+Current design is 'balance_cntrl_fast_sim0'.
+Information: Renaming design /userspace/pkrovi/ece551/ex17/balance_cntrl_fast_sim0.db:balance_cntrl_fast_sim0 to /userspace/pkrovi/ece551/ex17/balance_cntrl_fast_sim0.db:balance_cntrl. (UIMG-45)
+Current design is 'balance_cntrl'.
+Current design is 'balance_cntrl'.
+
+  Linking design 'balance_cntrl'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /userspace/pkrovi/ece551/ex17/balance_cntrl_fast_sim0.db, etc
+  saed32rvt_ss0p95v125c (library) /srv/auto/apps/saed32_edk/2023/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db
+
+Information: Summary of messages issued during linking: (LINK-1806)
+No messages were issued during linking.
+ 
+****************************************
+check_design summary:
+Version:     Y-2026.03
+Date:        Fri Oct 30 10:36:39 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      6
+    Unconnected ports (LINT-28)                                     6
+
+Cells                                                               8
+    Cells do not drive (LINT-1)                                     8
+--------------------------------------------------------------------------------
+
+Warning: In design 'PID_fast_sim0', cell 'C332' does not drive any nets. (LINT-1)
+Warning: In design 'SegwayMath', cell 'B_11' does not drive any nets. (LINT-1)
+Warning: In design 'SegwayMath', cell 'B_12' does not drive any nets. (LINT-1)
+Warning: In design 'SegwayMath', cell 'B_13' does not drive any nets. (LINT-1)
+Warning: In design 'SegwayMath', cell 'B_14' does not drive any nets. (LINT-1)
+Warning: In design 'SegwayMath', cell 'B_15' does not drive any nets. (LINT-1)
+Warning: In design 'SegwayMath', cell 'B_16' does not drive any nets. (LINT-1)
+Warning: In design 'SegwayMath', cell 'C305' does not drive any nets. (LINT-1)
+Warning: In design 'PID_fast_sim0', port 'ptch_rt[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'PID_fast_sim0', port 'ptch_rt[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'PID_fast_sim0', port 'ptch_rt[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'PID_fast_sim0', port 'ptch_rt[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'PID_fast_sim0', port 'ptch_rt[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'PID_fast_sim0', port 'ptch_rt[0]' is not connected to any nets. (LINT-28)
+Warning: Design rule attributes from the driving cell will be set on the port 'vld'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[15]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[14]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[13]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[12]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[15]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[14]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[13]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[12]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'ptch_rt[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'pwr_up'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rider_off'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'steer_pot[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'en_steer'. (UID-401)
+Current design is 'balance_cntrl'.
+CPU Load: 0%, Ram Free: 0 GB, Swap Free: 1 GB, Work Disk Free: 23 GB, Tmp Disk Free: 14 GB
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | Y-2026.03-DWBB_202603.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 193                                    |
+| Number of User Hierarchies                              | 2                                      |
+| Sequential Cell Count                                   | 45                                     |
+| Macro Count                                             | 0                                      |
+| Pad Count                                               | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 1                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 55                                     |
+| Number of Dont Touch Nets                               | 2                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with Target Library Subset (with clock_path)     | false  (false )                        |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+
+Information: There are 14 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'SegwayMath'
+  Processing 'PID_fast_sim0'
+  Processing 'balance_cntrl'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+Module: DW01_cmp2_width12, Ports: 28, Input: 26, Output: 2, Inout: 0
+Module: DW01_cmp2_width12, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'SegwayMath_DW01_cmp2_0'
+  Processing 'SegwayMath_DW01_cmp2_1'
+Module: DW01_cmp2_width13, Ports: 30, Input: 28, Output: 2, Inout: 0
+Module: DW01_cmp2_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'SegwayMath_DW01_cmp2_2'
+  Processing 'SegwayMath_DW01_cmp2_3'
+Module: DW01_add_width13, Ports: 41, Input: 27, Output: 14, Inout: 0
+Module: DW01_add_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'SegwayMath_DW01_add_0'
+Module: DW01_sub_width13, Ports: 41, Input: 27, Output: 14, Inout: 0
+Module: DW01_sub_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'SegwayMath_DW01_sub_0'
+  Processing 'SegwayMath_DW01_add_1'
+  Processing 'SegwayMath_DW01_sub_1'
+  Processing 'SegwayMath_DW01_sub_2'
+  Processing 'SegwayMath_DW01_sub_3'
+  Processing 'SegwayMath_DW01_sub_4'
+Module: DW01_sub_width12, Ports: 38, Input: 25, Output: 13, Inout: 0
+Module: DW01_sub_width12, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'SegwayMath_DW01_sub_5'
+  Processing 'SegwayMath_DW01_cmp2_4'
+  Processing 'PID_fast_sim0_DW01_sub_0_DW01_sub_6'
+Module: DW01_inc_width27, Ports: 54, Input: 27, Output: 27, Inout: 0
+Module: DW01_inc_width27, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'PID_fast_sim0_DW01_inc_0'
+Module: DW01_add_width18, Ports: 56, Input: 37, Output: 19, Inout: 0
+Module: DW01_add_width18, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'PID_fast_sim0_DW01_add_0_DW01_add_2'
+Module: DW02_mult_A_width10_B_width5, Ports: 31, Input: 16, Output: 15, Inout: 0
+Module: DW02_mult_A_width10_B_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width10_B_width5'
+Module: DW01_MUX, Ports: 4, Input: 3, Output: 1, Inout: 0
+Module: DW01_MUX, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_MUX'
+  Processing 'DW01_MUX'
+Module: DW01_mmux_width2, Ports: 7, Input: 5, Output: 2, Inout: 0
+Module: DW01_mmux_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_mmux_width2'
+  Processing 'DW01_mmux_width2'
+Module: DW01_mmux_width3, Ports: 10, Input: 7, Output: 3, Inout: 0
+Module: DW01_mmux_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_mmux_width3'
+  Processing 'DW01_mmux_width3'
+Module: DW01_mmux_width4, Ports: 13, Input: 9, Output: 4, Inout: 0
+Module: DW01_mmux_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_mmux_width4'
+  Processing 'DW01_mmux_width4'
+Module: DW01_mmux_width5, Ports: 16, Input: 11, Output: 5, Inout: 0
+Module: DW01_mmux_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_mmux_width5'
+  Processing 'DW01_mmux_width5'
+Module: DW01_add_width13, Ports: 41, Input: 27, Output: 14, Inout: 0
+Module: DW01_add_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_NAND2, Ports: 3, Input: 2, Output: 1, Inout: 0
+Module: DW01_NAND2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width13' (cla)
+  Processing 'DW01_add_width13'
+Module: DW01_add_width13, Ports: 41, Input: 27, Output: 14, Inout: 0
+Module: DW01_add_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width13' (cla)
+  Processing 'DW01_add_width13'
+  Building model 'DW02_mult_A_width10_B_width5' (csa)
+  Processing 'DW02_mult_A_width10_B_width5'
+Module: DW01_add_width16, Ports: 50, Input: 33, Output: 17, Inout: 0
+Module: DW01_add_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width16' (rpl)
+  Processing 'DW01_add_width16'
+Module: DW01_add_width16, Ports: 50, Input: 33, Output: 17, Inout: 0
+Module: DW01_add_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width16' (cla)
+  Processing 'DW01_add_width16'
+Module: DW02_mult_A_width12_B_width3, Ports: 31, Input: 16, Output: 15, Inout: 0
+Module: DW02_mult_A_width12_B_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width12_B_width3'
+  Building model 'DW02_mult_A_width12_B_width3' (csa)
+  Processing 'DW02_mult_A_width12_B_width3'
+Module: DW02_mult_A_width12_B_width9, Ports: 43, Input: 22, Output: 21, Inout: 0
+Module: DW02_mult_A_width12_B_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width12_B_width9'
+Module: DW01_add_width19, Ports: 59, Input: 39, Output: 20, Inout: 0
+Module: DW01_add_width19, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width19' (cla)
+  Processing 'DW01_add_width19'
+Module: DW01_add_width19, Ports: 59, Input: 39, Output: 20, Inout: 0
+Module: DW01_add_width19, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width19' (cla)
+  Processing 'DW01_add_width19'
+  Building model 'DW02_mult_A_width12_B_width9' (csa)
+  Processing 'DW02_mult_A_width12_B_width9'
+Module: DW02_mult_A_width9_B_width12, Ports: 43, Input: 22, Output: 21, Inout: 0
+Module: DW02_mult_A_width9_B_width12, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width9_B_width12'
+  Building model 'DW02_mult_A_width9_B_width12' (csa)
+  Processing 'DW02_mult_A_width9_B_width12'
+  Building model 'DW01_add_width13' (rpl)
+  Processing 'DW01_add_width13'
+Module: DW02_mult_A_width13_B_width1, Ports: 29, Input: 15, Output: 14, Inout: 0
+Module: DW02_mult_A_width13_B_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width13_B_width1'
+Module: DW01_absval_width13, Ports: 26, Input: 13, Output: 13, Inout: 0
+Module: DW01_absval_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width13'
+Module: DW01_inc_width13, Ports: 26, Input: 13, Output: 13, Inout: 0
+Module: DW01_inc_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_inc_width13' (cla)
+  Processing 'DW01_inc_width13'
+  Building model 'DW01_absval_width13' (cla)
+  Processing 'DW01_absval_width13'
+Module: DW01_absval_width1, Ports: 2, Input: 1, Output: 1, Inout: 0
+Module: DW01_absval_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width1'
+Module: DW01_inc_width1, Ports: 2, Input: 1, Output: 1, Inout: 0
+Module: DW01_inc_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_inc_width1' (cla)
+  Processing 'DW01_inc_width1'
+  Building model 'DW01_absval_width1' (cla)
+  Processing 'DW01_absval_width1'
+Module: DW01_inc_width14, Ports: 28, Input: 14, Output: 14, Inout: 0
+Module: DW01_inc_width14, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_inc_width14' (cla)
+  Processing 'DW01_inc_width14'
+Module: DW01_absval_width13, Ports: 26, Input: 13, Output: 13, Inout: 0
+Module: DW01_absval_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width13'
+Module: DW01_inc_width13, Ports: 26, Input: 13, Output: 13, Inout: 0
+Module: DW01_inc_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_inc_width13' (cla)
+  Processing 'DW01_inc_width13'
+  Building model 'DW01_absval_width13' (cla)
+  Processing 'DW01_absval_width13'
+Module: DW01_inc_width14, Ports: 28, Input: 14, Output: 14, Inout: 0
+Module: DW01_inc_width14, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_inc_width14' (cla)
+  Processing 'DW01_inc_width14'
+  Building model 'DW02_mult_A_width13_B_width1' (csa)
+  Processing 'DW02_mult_A_width13_B_width1'
+  Processing 'PID_fast_sim0_DW02_mult_0'
+  Processing 'PID_fast_sim0_DW01_add_1_DW01_add_3'
+  Processing 'PID_fast_sim0_DW01_add_2_DW01_add_4'
+  Processing 'PID_fast_sim0_DW01_add_3_DW01_add_5'
+  Processing 'SegwayMath_DW02_mult_0_DW02_mult_1'
+  Processing 'SegwayMath_DW01_add_2_DW01_add_6'
+  Processing 'SegwayMath_DW02_mult_1_DW02_mult_2'
+  Processing 'SegwayMath_DW01_add_3_DW01_add_7'
+  Processing 'SegwayMath_DW01_add_4_DW01_add_8'
+  Processing 'SegwayMath_DW02_mult_2_DW02_mult_3'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:10    3387.5      0.00       0.0       8.6                          
+    0:00:10    3387.5      0.00       0.0       8.6                          
+    0:00:10    3387.5      0.00       0.0       8.6                          
+    0:00:10    3387.5      0.00       0.0       8.6                          
+    0:00:10    3387.5      0.00       0.0       8.6                          
+    0:00:11    3040.3      0.00       0.0       1.0                          
+    0:00:11    3038.8      0.00       0.0       1.0                          
+    0:00:11    3038.8      0.00       0.0       1.0                          
+    0:00:11    3038.8      0.00       0.0       1.0                          
+    0:00:11    3038.8      0.00       0.0       1.0                          
+    0:00:11    3038.8      0.00       0.0       1.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3039.1      0.00       0.0       0.0                          
+    0:00:11    3027.1      0.00       0.0       0.0                          
+    0:00:11    3021.3      0.00       0.0       0.0                          
+    0:00:11    3018.0      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+    0:00:11    3015.9      0.00       0.0       0.0                          
+Loading db file '/srv/auto/apps/saed32_edk/2023/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+CPU Load: 1%, Ram Free: 0 GB, Swap Free: 1 GB, Work Disk Free: 23 GB, Tmp Disk Free: 14 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+Information: Updating graph... (UID-83)
+CPU Load: 1%, Ram Free: 0 GB, Swap Free: 1 GB, Work Disk Free: 23 GB, Tmp Disk Free: 14 GB
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 959                                    |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 45                                     |
+| Macro Count                                             | 0                                      |
+| Pad Count                                               | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 1                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 0                                      |
+| Number of Dont Touch Nets                               | 1                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with Target Library Subset (with clock_path)     | false  (false )                        |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+
+Information: There are 31 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'balance_cntrl'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    2867.0      0.00       0.0      42.5                          
+    0:00:01    2867.0      0.00       0.0      42.5                          
+    0:00:01    2867.0      0.00       0.0      42.5                          
+    0:00:01    2867.0      0.00       0.0      42.5                          
+    0:00:01    2867.0      0.00       0.0      42.5                          
+    0:00:01    2683.8      0.00       0.0      32.8                          
+    0:00:01    2683.3      0.00       0.0      32.8                          
+    0:00:01    2683.3      0.00       0.0      32.8                          
+    0:00:01    2683.3      0.00       0.0      32.8                          
+    0:00:01    2683.3      0.00       0.0      32.8                          
+    0:00:01    2683.3      0.00       0.0      32.8                          
+    0:00:01    2683.3      0.00       0.0      32.8                          
+    0:00:01    2684.8      0.00       0.0      13.4                          
+    0:00:01    2685.3      0.00       0.0       0.0                          
+    0:00:01    2685.3      0.00       0.0       0.0                          
+    0:00:01    2685.3      0.00       0.0       0.0                          
+    0:00:01    2685.3      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    2685.3      0.00       0.0       0.0                          
+    0:00:01    2685.3      0.00       0.0       0.0                          
+    0:00:01    2679.7      0.00       0.0      19.7                          
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    2679.7      0.00       0.0      19.7                          
+    0:00:01    2680.2      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    2680.2      0.00       0.0       0.0                          
+    0:00:01    2680.2      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+    0:00:01    2666.7      0.00       0.0       0.0                          
+Loading db file '/srv/auto/apps/saed32_edk/2023/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+CPU Load: 1%, Ram Free: 0 GB, Swap Free: 1 GB, Work Disk Free: 23 GB, Tmp Disk Free: 14 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+Writing verilog file '/userspace/pkrovi/ece551/ex17/balance_cntrl.vg'.
+1

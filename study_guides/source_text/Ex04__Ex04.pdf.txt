@@ -1,0 +1,20 @@
+    Exercise 04 Arithmetic Block Test & Debug
+    Create a testbench to test a provided 8-bit                 A[7:0]                   B[7:0]
+    arithmetic block arith.sv
+       • This arithmetic unit can perform addition or              a[7:0]         b[7:0]
+         subtraction.     SUM = A + B if SUB is low                   ov           cin
+                          SUM = A – B if SUB is high                       sum[7:0]         SUB
+       • It also outputs an overflow signal if the result is     OV            SUM[7:0]
+         either too positive or too negative to represent
+         as an 8-bit signed number.                                        arith.sv
+
+    • Think about what testcases you need to fully test the functionality of this
+      block.
+       • What (and how many) input stimuli do I need to verify that addition,
+         subtraction, and overflow work under all conditions?
+    • arith contains a bug in the ov logic. See if your testbench can find it.
+    • Fix the bug and in the comments, describe your testcase that caught it.
+          → Submit arith_tb.sv and arith.sv (fixing the bug in the ov logic)
+
+1
+

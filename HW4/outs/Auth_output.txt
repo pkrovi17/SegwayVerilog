@@ -1,0 +1,19 @@
+PASS: UART byte=0x00 state=0 pwr_up=0
+PASS: UART byte=0x53 state=0 pwr_up=0
+PASS: UART byte=0x47 state=1 pwr_up=1
+PASS: UART byte=0x47 state=1 pwr_up=1
+PASS: UART byte=0x55 state=1 pwr_up=1
+PASS: UART byte=0x53 state=0 pwr_up=0
+PASS: UART byte=0x47 state=1 pwr_up=1
+PASS: UART byte=0x53 state=2 pwr_up=1
+PASS: UART byte=0x55 state=2 pwr_up=1
+PASS: UART byte=0x53 state=2 pwr_up=1
+PASS: UART byte=0x47 state=1 pwr_up=1
+PASS: UART byte=0x53 state=2 pwr_up=1
+PASS: UART byte=0x47 state=1 pwr_up=1
+PASS: UART byte=0x47 state=1 pwr_up=1
+PASS: UART byte=0x53 state=2 pwr_up=1
+PASS: UART byte=0x47 state=1 pwr_up=1
+PASS: UART byte=0x53 state=0 pwr_up=0
+Pranav Krovi (pkrovi): all 25 authentication checks passed (17 UART bytes, all 8 FSM arcs)!
+HW4/Auth_blk_tb.sv:126: $finish called at 17708481000 (1ps)

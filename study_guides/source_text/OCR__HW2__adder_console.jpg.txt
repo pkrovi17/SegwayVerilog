@@ -1,0 +1,113 @@
+Eile Edit View Compile
+
+Simulate Add  Transeript Tools Layout
+
+Bookmarks  Window  Help
+
+VSIM 26> Tun -all
+VSIM 27> vsin work. adder_th
+
+|# End time: 22:23:37 on Sep 28,2026, Elapsed time: 0:21:46
+[# Errors: 0, Warnings: 1
+
+[# vsim work.adder_tb
+
+[# Start time: 22:23:37 on Sep 28,2026
+
+|# Loading sv_std.std
+
+|# Loading work.adder_tb
+
+1# Loading work.adder
+
+lvsim work.adder_tb
+
+[# End time: 22:24:21 on Sep 28,2026, Elapsed time: 0::
+|# Errors: 0, Warnings: 1
+
+[# vsim work.adder_tb
+
+[# Start time: 22:24:21 on Sep 28,2026
+
+|# Loading sv_std.std
+
+|# Loading work.adder_tb
+
+/# Loading work.adder
+
+VSIM 28> add wave sim: /adder_tb/*
+
+VSIM 29> run -all
+
+[# AL 512 adder tests passed!
+
+[# ** Note: $finish  : /home/pkrovi/Downloads/eces51/HN2/adder_th. sv(40)
+
+#  Time: 512 ns Iteration: 0 Instance: /adder_tb
+
+#1
+
+|# Break in Module adder_tb at /home/pkrovi/Downloads/ecess1/H2/adder_tb.sv line 40
+
+|VSIM 30>
+
+B S E {WBL2 0-AEN || SHBEAR]| Htes F wplABBRC DWO[ t & 3 4| o fimine ] || cotumtayout licarumns A ga3|[flrpus|sxxps|Saaa|Ratduib] s ey B e S T RS T Y T TN
+& sim - Default + & x|| |$a Objects + @ x|| |[h] homelpkroviDownloadslece551/HW2/adder_to.sv (/adder_to) - Default + @ x|
+¥/ instance [Design unit_|Design unittype |Top Category _|Visibility |Total coverage | L | T @ Non 3] »
+(=l adder_to adder b Module DUlnstance  +acc=<fu, 1 timescale ns/lps =
+o DUT adder Module DU Instance 2
+9 ENTALELS adder th  Process - Regi... Internal 3 Bmodule adder_tb();
+o std std ViPackage Package Net  Internal 4
+& #vsim_capacity Capacity Statistics Net  intemal 5 | reg [3:01 A, B;
+Inte mal 6 Teg cin;
+e c wire [3:0] Sum;
+Inte 8 wire co;
+Inte 9 integer a, b, carry_in;
+Int 10 integer expected;
+1 integer tests;
+2
+13 adder iDUT(.A(A), .B(B), .cin(cin), .Sum(Sum), .co(co));
+u
+15 [ initial begin
+o [ tests - 0
+17 /1 try all 16 * 16 * 2 = 512 inputs
+18 for (a=0; a<16; a=a+1) begin
+19 E for (b=10; b<16; b=b+1) begin
+20 © for (carry_in = 0; carry_in < 2; carry_in = carry_in + 1) begin
+2 [
+2 B=b;
+23 cin = carry_in;
+%
+25 /1 integer addition is done in 32 bits
+26 expected = a + b + carry_in;
+27 #1; // let the combinational output settle
+28 /1 check both sum and carry
+29 E if ({co, Sum} expected[4:0]) begin
+EUC Sdisplay("ERROR: A=%0d B=%0d cin=%b: Sum=%0d co=%b, expected Sum=%d co=¥%b",
+31 A, B, cin, Sum, co, expected[3:0], expected[4]);
+32 $stop();
+33 end
+p Cests = tests ¢ 1;
+35 end
+36 end
+37 end
+s
+39 Sdisplay("All %0d adder tests passed!”, tests);
+0% $finish();
+41 end
+P
+43 endmodule
+P
+%8 Processes (Active) EEES
+*|Name Type (fitered) Parent Path
+@ #INITIAL#15
+=
+[E D]
+Tibrary [ Project - | & sm 0] 0 Wave ][] saturale_thsv - |[h] sairaiesy | [h) adder_to.sv >
+# Transcript [+]2] ]
+T
+
+w40 Cat 0
+
+JREAD [Project -2 |Now:512 ns Delia:0 Simiadder_bINTIALFS
+

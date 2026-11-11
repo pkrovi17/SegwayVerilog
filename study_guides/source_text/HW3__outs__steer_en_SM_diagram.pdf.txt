@@ -1,0 +1,46 @@
+                          HW3 Problem 1 - Steering enable FSM
+                                 Pranav Krovi (pkrovi)
+
+ Defaults: C=0, E=0, R=0; stay in current state unless an arrow says otherwise.
+State outputs and / edge actions override defaults immediately (Mealy outputs).
+                                   Asynchronous reset: !rst_n
+
+
+
+
+                                           WAIT_RIDER
+                                               00                         !G || L
+                                            C=1, R=1
+
+
+
+                                                G && !L   L / C=1, R=1
+
+
+
+
+          !L && D / C=1                  WAIT_BALANCE                                 L / C=1, R=1
+     !L && !D && !F / defaults                01                                    (highest priority)
+
+
+
+
+                                         !L && !D && F    !L && H / C=1
+
+
+
+
+                           STEERING
+                                                 !L && !H / E=1
+                              10
+
+
+
+
+           Inputs: G=sum_gt_min, L=sum_lt_min, D=diff_gt_1_4, H=diff_gt_15_16, F=tmr_full
+           Outputs: C=clr_tmr, E=en_steer, R=rider_off
+           G and L are hysteresis thresholds, not complements.
+           While waiting, imbalance D takes priority over timer expiration F.
+           Timer clears on every cycle with C=1; it must time a fresh 1.3 s of balance.
+           Illegal state 11: C=1, R=1, E=0, next state WAIT_RIDER.
+

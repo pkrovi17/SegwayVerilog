@@ -1,0 +1,67 @@
+PID_extra_tb.sv was successful
+PWMI1.5v was successful
+PWM11_th.5v was successful
+Steer_en_SM.sv was successful
+Steer_en_SM_extra_th.sv was successful
+steer_en_SM_shell.sv was successful
+Steer_en_SM_tb.sv was successful
+UART_1x.5v was successful.
+UART_tb.5v was successful.
+UART_tx.5v was successful.
+UART_tx_th..sv was successful.
+
+13 conpiles, 0 failed with no errors.
+
+Modelsim> vsim work .PID_dbg_th
+
+[# vsin work.PID_dbg_tb
+
+[# Start time: 18:58:22 on Oct 12,2026
+
+|# Loading sv_std.std
+
+|# Loading work.PID_dbg_tb
+
+|# Loading work.PID
+
+VSIM 2> run
+
+VSIM 3> run -all
+
+G00D1: zero in should give zero out
+
+G00D2: PID_cntrl should be P_term only
+
+G00D3: ss_tmr should be 0x00 since pwr_up=o
+
+G00D4: D_term in proper range
+
+G00DS: 1_term should be 5
+
+G00D6: 1_term should be Ox11
+
+G00D7: 1_term should be saturated at OXTFF
+
+G00D8: 1_term should be 5
+
+G00D9: 1_term should be 0, P_tern should be 0x0090
+
+G00D10: 1_term should be Ox7FFA, P_term should be 0x7880
+
+G00D11: PID_cntrl should be saturated negative
+
+G00D12: 1_term should be 0x7801, P_term should be 0x0240
+
+G00D13: ss_tmr should be 0x01
+
+YAHOO!! all tests passed...ny name is Pranav Krovi (pkrovi)
+
+** Note: $stop /home/pkrovi /Downloads/eces51/Hn3/PID_dbg_tb. sv(181)
+Tine: 10948195 ns Iteration: 1 Instance: /PID_dbg_th
+Break in Module PID_dbg_tb at /home/pkrovi/Downloads/eces51/Hn3/PID_dbg_th.sv line 181
+
+LR R
+
+[VSIM 4>
+
+Project i3 [Now: 10,948,195 ns Della: 1 SmiPID._dbg_bINTIAL23

@@ -1,0 +1,112 @@
+    Exercise 10: PID from PID_Math
+    • We are going to augment your PID_Math to include the sequential
+      elements needed and create the full PID controller for the segway
+
+    • Interface changes:
+      • Add clk and rst_n (synch elements now part of design)
+      • Add vld input that will indicate when a new inertial sensor reading is valid
+      • Remove integrator[17:0] as input (this will now be an internal register)
+      • Add ss_tmr[7:0] as an output, which will be the upper bits of a timer used to
+          affect a soft start (consumed in SegwayMath.sv)
+      •   Add 2 new single bit inputs called pwr_up and rider_off
+
+
+
+
+1
+    Exercise 10: PID from PID_Math
+
+
+
+
+      Signal            Dir   Description
+
+      clk,rst_n         in    50MHz system clock & active low reset
+      vld               in    High whenever new inertial sensor reading (ptch) is ready
+      ptch[15:0]        in    Pitch of Segway from inertial_intf
+      ptch_rt[15:0]     in    Pitch rate (degrees/sec). Used for D_term of PID
+      pwr_up            in    Asserted when Segway balance control is powered up.
+                              Used to keep ss_tmr at zero until then.
+      rider_off         in    Asserted when no rider detected. Zeros out integrator.
+      PID_cntrl[11:0]   out   This is the main output we are looking to make
+      ss_tmr[7:0]       out   Soft start timer…scales drive in SegwayMath
+2
+    The I of PID (Integral)
+    • The 18-bit integrator used to be an input. Now we need to form the
+        integrator accumulator as an internal register.
+
+
+
+
+    (internal signal)
+
+
+
+
+3
+    PID Soft Start Timer
+    •   The PID unit will also generate the soft start timer (ss_tmr[7:0]) that is
+        used in SegwayMath.
+    •   We want this ramp of ss_tmr to be in the 2-3 second range. Given our
+        clock speed (50MHz), this takes quite a wide timer.
+    •   ss_tmr[7:0] will be formed from the upper 8-bits of a 27-bit timer.
+
+    •   The FPGA of the Segway is powered and running initially, but it is waiting
+        for a code from the auth_blk (authorization block) to actually enable the
+        balancing feature and allow a rider to ride it. When this code comes in
+        via a Bluetooth link the pwr_up signal will be asserted.
+    •   The counter that forms ss_tmr should be held in a zero state until
+        pwr_up is asserted.
+
+
+
+
+4
+    PID Soft Start Timer
+    •   When pwr_up is deasserted, the soft start timer should remain zero.
+    •   It is a one shot timer. Once it starts counting and gets near full (bits
+        [26:19] set) it freezes.
+
+
+
+                                         long_tmr[26:0]
+                                                         rst_n
+                                27’h0000000
+                                                0                     8
+                                1                                         ss_tmr[7:0]
+                                                1
+
+                    +1          0
+                                                                 27
+
+
+
+                                              pwr_up
+                     &[26:19]                             clk
+
+
+                                                       assign ss_tmr = long_tmr[26:19]
+
+
+
+
+5
+    PID Initial Testing
+    • A testbench (PID_dbg_tb.sv) is provided for you. Run your DUT against
+      this self-checking testbench and debug.
+
+    • PID_dbg_tb.sv code is commented fairly well with what it is trying to test.
+      Look at the comments when debugging your code. This code running
+      perfectly does not ensure your DUT is good.
+
+    • In a later exercise we will test this unit more thoroughly using random
+      testing.
+
+    • Modify the testbench to include your name in the output messages.
+    • Submit: PID.sv and proof it passed the testbench
+       • Complete it for HW3
+
+
+
+6
+

@@ -1,0 +1,2 @@
+PASS: FF reset/hold/priority; job and A2D FSMs; steering; synchronization; pattern; counter; PWM
+study_guides/validation/code_reference_tb.sv:166: $finish called at 12796000 (1ps)

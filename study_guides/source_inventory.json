@@ -1,0 +1,665 @@
+[
+  {
+    "path": "Ex10/PID_dbg_tb.sv",
+    "bytes": 6388
+  },
+  {
+    "path": "Ex10/PID_console.jpg",
+    "bytes": 125771
+  },
+  {
+    "path": "Ex10/Ex10.pdf",
+    "bytes": 322568,
+    "text": "study_guides/source_text/Ex10__Ex10.pdf.txt",
+    "pages": 6
+  },
+  {
+    "path": "Ex10/PID.sv",
+    "bytes": 1928
+  },
+  {
+    "path": "Ex10/PID_extra_tb.sv",
+    "bytes": 4081
+  },
+  {
+    "path": "HW2/SegwayMath.sv",
+    "bytes": 2677
+  },
+  {
+    "path": "HW2/saturate.sv",
+    "bytes": 1115
+  },
+  {
+    "path": "HW2/PID_Math_console.jpg",
+    "bytes": 575697
+  },
+  {
+    "path": "HW2/adder_tb.sv",
+    "bytes": 1010
+  },
+  {
+    "path": "HW2/adder_console.jpg",
+    "bytes": 510837
+  },
+  {
+    "path": "HW2/SegwayMath_Test2.jpg",
+    "bytes": 613645
+  },
+  {
+    "path": "HW2/HW2_prob5.sv",
+    "bytes": 1794
+  },
+  {
+    "path": "HW2/adder.sv",
+    "bytes": 210
+  },
+  {
+    "path": "HW2/saturate_console.jpg",
+    "bytes": 580050
+  },
+  {
+    "path": "HW2/ece551_HW2_FA26.pdf",
+    "bytes": 97936,
+    "text": "study_guides/source_text/HW2__ece551_HW2_FA26.pdf.txt",
+    "pages": 2
+  },
+  {
+    "path": "HW2/SegwayMath_Test1.jpg",
+    "bytes": 591201
+  },
+  {
+    "path": "HW2/PID_Math.sv",
+    "bytes": 1177
+  },
+  {
+    "path": "HW2/PID_Math_tb.sv",
+    "bytes": 2575
+  },
+  {
+    "path": "HW2/saturate_tb.sv",
+    "bytes": 1900
+  },
+  {
+    "path": "HW2/SegwayMath_tb.sv",
+    "bytes": 3573
+  },
+  {
+    "path": "Ex03/synch_detect_tb.sv",
+    "bytes": 1534
+  },
+  {
+    "path": "Ex03/synch_detect.sv",
+    "bytes": 812
+  },
+  {
+    "path": "Ex03/dff.sv",
+    "bytes": 357
+  },
+  {
+    "path": "Ex03/Ex03.pdf",
+    "bytes": 158031,
+    "text": "study_guides/source_text/Ex03__Ex03.pdf.txt",
+    "pages": 3
+  },
+  {
+    "path": ".vscode/settings.json",
+    "bytes": 121
+  },
+  {
+    "path": "Ex08/HW2_prob5.sv",
+    "bytes": 1794
+  },
+  {
+    "path": "Ex08/Ex08.pdf",
+    "bytes": 98715,
+    "text": "study_guides/source_text/Ex08__Ex08.pdf.txt",
+    "pages": 1
+  },
+  {
+    "path": "Ex06/waveform.jpg",
+    "bytes": 558910
+  },
+  {
+    "path": "Ex06/PID_Math.sv",
+    "bytes": 1177
+  },
+  {
+    "path": "Ex06/Ex06.pdf",
+    "bytes": 476390,
+    "text": "study_guides/source_text/Ex06__Ex06.pdf.txt",
+    "pages": 7
+  },
+  {
+    "path": "Ex06/PID_Math_tb.sv",
+    "bytes": 2575
+  },
+  {
+    "path": "HW1/tb.sv",
+    "bytes": 361
+  },
+  {
+    "path": "HW1/dff.sv",
+    "bytes": 382
+  },
+  {
+    "path": "HW1/hw1.zip",
+    "bytes": 1230027,
+    "members": [
+      "20260914232620.jpg",
+      "dff.sv",
+      "tb.sv"
+    ]
+  },
+  {
+    "path": "HW1/20260914232620.jpg",
+    "bytes": 1235667
+  },
+  {
+    "path": "Ex11/UART_tx_tb.sv",
+    "bytes": 3013
+  },
+  {
+    "path": "Ex11/UART_tx.sv",
+    "bytes": 1871
+  },
+  {
+    "path": "Ex11/Ex11.pdf",
+    "bytes": 591777,
+    "text": "study_guides/source_text/Ex11__Ex11.pdf.txt",
+    "pages": 7
+  },
+  {
+    "path": "Tutorial/20260914235854ss.jpg",
+    "bytes": 473899
+  },
+  {
+    "path": "Tutorial/20260914235854.jpg",
+    "bytes": 2453245
+  },
+  {
+    "path": "lectures/10-Coding Style Coding for Synthesis-pdf.pdf",
+    "bytes": 506108,
+    "text": "study_guides/source_text/lectures__10-Coding Style Coding for Synthesis-pdf.pdf.txt",
+    "pages": 29
+  },
+  {
+    "path": "lectures/12-Testbench Constructs-2-pdf.pdf",
+    "bytes": 634129,
+    "text": "study_guides/source_text/lectures__12-Testbench Constructs-2-pdf.pdf.txt",
+    "pages": 25
+  },
+  {
+    "path": "lectures/07-Behavioral Verilog-pdf.pdf",
+    "bytes": 275016,
+    "text": "study_guides/source_text/lectures__07-Behavioral Verilog-pdf.pdf.txt",
+    "pages": 13
+  },
+  {
+    "path": "lectures/02-Verilog Basics-pdf.pdf",
+    "bytes": 515214,
+    "text": "study_guides/source_text/lectures__02-Verilog Basics-pdf.pdf.txt",
+    "pages": 23
+  },
+  {
+    "path": "lectures/12-Testbench Constructs-1-pdf.pdf",
+    "bytes": 607258,
+    "text": "study_guides/source_text/lectures__12-Testbench Constructs-1-pdf.pdf.txt",
+    "pages": 23
+  },
+  {
+    "path": "lectures/03-Dataflow-pdf.pdf",
+    "bytes": 258072,
+    "text": "study_guides/source_text/lectures__03-Dataflow-pdf.pdf.txt",
+    "pages": 13
+  },
+  {
+    "path": "lectures/09-Stratified Event queue-pdf.pdf",
+    "bytes": 354673,
+    "text": "study_guides/source_text/lectures__09-Stratified Event queue-pdf.pdf.txt",
+    "pages": 18
+  },
+  {
+    "path": "lectures/08-Testbench-pdf.pdf",
+    "bytes": 243128,
+    "text": "study_guides/source_text/lectures__08-Testbench-pdf.pdf.txt",
+    "pages": 8
+  },
+  {
+    "path": "lectures/00-Course_Intro.pdf",
+    "bytes": 276115,
+    "text": "study_guides/source_text/lectures__00-Course_Intro.pdf.txt",
+    "pages": 15
+  },
+  {
+    "path": "lectures/05-Testbench-Intro-pdf.pdf",
+    "bytes": 189093,
+    "text": "study_guides/source_text/lectures__05-Testbench-Intro-pdf.pdf.txt",
+    "pages": 8
+  },
+  {
+    "path": "lectures/06-Sim-Mechanism-pdf.pdf",
+    "bytes": 304072,
+    "text": "study_guides/source_text/lectures__06-Sim-Mechanism-pdf.pdf.txt",
+    "pages": 12
+  },
+  {
+    "path": "lectures/04-Comments-pdf.pdf",
+    "bytes": 473738,
+    "text": "study_guides/source_text/lectures__04-Comments-pdf.pdf.txt",
+    "pages": 15
+  },
+  {
+    "path": "lectures/01-Design Process-pdf.pdf",
+    "bytes": 391434,
+    "text": "study_guides/source_text/lectures__01-Design Process-pdf.pdf.txt",
+    "pages": 21
+  },
+  {
+    "path": "lectures/11-FSM-pdf.pdf",
+    "bytes": 417851,
+    "text": "study_guides/source_text/lectures__11-FSM-pdf.pdf.txt",
+    "pages": 13
+  },
+  {
+    "path": "Ex12/UART_rx.sv",
+    "bytes": 2043
+  },
+  {
+    "path": "Ex12/Ex12.pdf",
+    "bytes": 233970,
+    "text": "study_guides/source_text/Ex12__Ex12.pdf.txt",
+    "pages": 5
+  },
+  {
+    "path": "Ex12/proof.png",
+    "bytes": 379502
+  },
+  {
+    "path": "Ex12/UART_tx.sv",
+    "bytes": 1871
+  },
+  {
+    "path": "Ex12/UART_tb.sv",
+    "bytes": 3426
+  },
+  {
+    "path": "Ex09/PWM11_test_tb_console.jpg",
+    "bytes": 1092381
+  },
+  {
+    "path": "Ex09/PWM11_test.qsf",
+    "bytes": 3585
+  },
+  {
+    "path": "Ex09/PWM11_tb.sv",
+    "bytes": 3022
+  },
+  {
+    "path": "Ex09/PWM11_test.sv",
+    "bytes": 2932
+  },
+  {
+    "path": "Ex09/rst_synch.sv",
+    "bytes": 303
+  },
+  {
+    "path": "Ex09/PWM11_test.qpf",
+    "bytes": 1346
+  },
+  {
+    "path": "Ex09/PWM11_test_tb.sv",
+    "bytes": 2447
+  },
+  {
+    "path": "Ex09/Ex09.pdf",
+    "bytes": 807434,
+    "text": "study_guides/source_text/Ex09__Ex09.pdf.txt",
+    "pages": 13
+  },
+  {
+    "path": "Ex09/PWM11.sv",
+    "bytes": 1085
+  },
+  {
+    "path": "Ex09/PB_release.sv",
+    "bytes": 463
+  },
+  {
+    "path": "Ex09/up_dwn_cnt4.sv",
+    "bytes": 398
+  },
+  {
+    "path": "Ex09/PWM11_tb_console.jpg",
+    "bytes": 640175
+  },
+  {
+    "path": "Ex07/SegwayMath.sv",
+    "bytes": 2677
+  },
+  {
+    "path": "Ex07/Ex07.pdf",
+    "bytes": 584037,
+    "text": "study_guides/source_text/Ex07__Ex07.pdf.txt",
+    "pages": 11
+  },
+  {
+    "path": "Ex07/SegwayMath_tb.sv",
+    "bytes": 3573
+  },
+  {
+    "path": "Ex05/saturate.sv",
+    "bytes": 1115
+  },
+  {
+    "path": "Ex05/Ex05.pdf",
+    "bytes": 180944,
+    "text": "study_guides/source_text/Ex05__Ex05.pdf.txt",
+    "pages": 3
+  },
+  {
+    "path": "Ex05/self-checking-testbench-example.pdf",
+    "bytes": 117540,
+    "text": "study_guides/source_text/Ex05__self-checking-testbench-example.pdf.txt",
+    "pages": 1
+  },
+  {
+    "path": "Ex05/saturate_tb.sv",
+    "bytes": 1900
+  },
+  {
+    "path": "Exams/MidtermPractice_sol.pdf",
+    "bytes": 475923,
+    "text": "study_guides/source_text/Exams__MidtermPractice_sol.pdf.txt",
+    "pages": 8
+  },
+  {
+    "path": "Ex13/Ex13-steering_copilot.pdf",
+    "bytes": 225241,
+    "text": "study_guides/source_text/Ex13__Ex13-steering_copilot.pdf.txt",
+    "pages": 3
+  },
+  {
+    "path": "Ex13/sync_fifo_bug5.sv",
+    "bytes": 1921
+  },
+  {
+    "path": "Ex13/sync_fifo_bug4.sv",
+    "bytes": 1935
+  },
+  {
+    "path": "Ex13/sync_fifo_bug3.sv",
+    "bytes": 1910
+  },
+  {
+    "path": "Ex13/sync_fifo_bug1.sv",
+    "bytes": 1925
+  },
+  {
+    "path": "Ex13/tb_skeleton.sv",
+    "bytes": 5988
+  },
+  {
+    "path": "Ex13/sync_fifo_bug2.sv",
+    "bytes": 1921
+  },
+  {
+    "path": "Ex04/arith.sv",
+    "bytes": 1228
+  },
+  {
+    "path": "Ex04/arith_tb.sv",
+    "bytes": 1282
+  },
+  {
+    "path": "Ex04/Ex04.pdf",
+    "bytes": 115103,
+    "text": "study_guides/source_text/Ex04__Ex04.pdf.txt",
+    "pages": 1
+  },
+  {
+    "path": "HW3/steer_en_SM_extra_tb.sv",
+    "bytes": 3040
+  },
+  {
+    "path": "HW3/PID_dbg_tb.sv",
+    "bytes": 6397
+  },
+  {
+    "path": "HW3/steer_en_SM_shell.sv",
+    "bytes": 2031
+  },
+  {
+    "path": "HW3/UART_rx.sv",
+    "bytes": 2043
+  },
+  {
+    "path": "HW3/steer_en_SM_tb (2).sv",
+    "bytes": 5590
+  },
+  {
+    "path": "HW3/README.md",
+    "bytes": 5655
+  },
+  {
+    "path": "HW3/PWM11_tb.sv",
+    "bytes": 3022
+  },
+  {
+    "path": "HW3/steer_en_SM.sv",
+    "bytes": 1532
+  },
+  {
+    "path": "HW3/PID.sv",
+    "bytes": 1985
+  },
+  {
+    "path": "HW3/simulation.vvp",
+    "bytes": 17181
+  },
+  {
+    "path": "HW3/ece551_HW3.pdf",
+    "bytes": 159195,
+    "text": "study_guides/source_text/HW3__ece551_HW3.pdf.txt",
+    "pages": 3
+  },
+  {
+    "path": "HW3/UART_tx_tb.sv",
+    "bytes": 3022
+  },
+  {
+    "path": "HW3/UART_tx.sv",
+    "bytes": 1871
+  },
+  {
+    "path": "HW3/cummingssnug2000.pdf",
+    "bytes": 63436,
+    "text": "study_guides/source_text/HW3__cummingssnug2000.pdf.txt",
+    "pages": 23
+  },
+  {
+    "path": "HW3/steer_en_SM_tb.sv",
+    "bytes": 6876
+  },
+  {
+    "path": "HW3/PWM11.vcd",
+    "bytes": 4802120
+  },
+  {
+    "path": "HW3/PWM11.sv",
+    "bytes": 1085
+  },
+  {
+    "path": "HW3/PID_extra_tb.sv",
+    "bytes": 4090
+  },
+  {
+    "path": "HW3/UART_tb.sv",
+    "bytes": 3435
+  },
+  {
+    "path": "HW3/myouts/PID_dbg_out.png",
+    "bytes": 116218
+  },
+  {
+    "path": "HW3/myouts/steer_SM_outs.png",
+    "bytes": 66028
+  },
+  {
+    "path": "HW3/myouts/pwm11_tb_out.png",
+    "bytes": 60675
+  },
+  {
+    "path": "HW3/myouts/PMW11_tb_out.png",
+    "bytes": 56757
+  },
+  {
+    "path": "HW3/myouts/uart_tb_out.png",
+    "bytes": 55856
+  },
+  {
+    "path": "HW3/myouts/pwm11_tb_out_waves.png",
+    "bytes": 266847
+  },
+  {
+    "path": "HW3/myouts/PID_extra_out.png",
+    "bytes": 50674
+  },
+  {
+    "path": "HW3/myouts/PWM11_outs.vcd",
+    "bytes": 2180
+  },
+  {
+    "path": "HW3/outs/PWM11_tb_output.txt",
+    "bytes": 833
+  },
+  {
+    "path": "HW3/outs/simulation_output.txt",
+    "bytes": 3052
+  },
+  {
+    "path": "HW3/outs/PID_extra_tb_pass.png",
+    "bytes": 20528
+  },
+  {
+    "path": "HW3/outs/steer_en_SM_extra_tb_output.txt",
+    "bytes": 209
+  },
+  {
+    "path": "HW3/outs/PID_dbg_tb_pass.png",
+    "bytes": 73545
+  },
+  {
+    "path": "HW3/outs/UART_tb_pass.png",
+    "bytes": 58200
+  },
+  {
+    "path": "HW3/outs/steer_en_SM_extra_tb_pass.png",
+    "bytes": 20943
+  },
+  {
+    "path": "HW3/outs/steer_en_SM_diagram.png",
+    "bytes": 289172
+  },
+  {
+    "path": "HW3/outs/PWM11_tb_pass.png",
+    "bytes": 93676
+  },
+  {
+    "path": "HW3/outs/run_checks.py",
+    "bytes": 2987
+  },
+  {
+    "path": "HW3/outs/steer_en_SM_tb_output.txt",
+    "bytes": 196
+  },
+  {
+    "path": "HW3/outs/plot_pwm.py",
+    "bytes": 3358
+  },
+  {
+    "path": "HW3/outs/steer_en_SM.dot",
+    "bytes": 1688
+  },
+  {
+    "path": "HW3/outs/steer_en_SM_diagram.pdf",
+    "bytes": 19357,
+    "text": "study_guides/source_text/HW3__outs__steer_en_SM_diagram.pdf.txt",
+    "pages": 1
+  },
+  {
+    "path": "HW3/outs/PID_dbg_tb_output.txt",
+    "bytes": 704
+  },
+  {
+    "path": "HW3/outs/PWM11_waveforms.png",
+    "bytes": 98601
+  },
+  {
+    "path": "HW3/outs/steer_en_SM_tb_pass.png",
+    "bytes": 20214
+  },
+  {
+    "path": "HW3/outs/PID_extra_tb_output.txt",
+    "bytes": 192
+  },
+  {
+    "path": "HW3/outs/UART_tx_tb_pass.png",
+    "bytes": 56917
+  },
+  {
+    "path": "HW3/outs/UART_tx_tb_output.txt",
+    "bytes": 506
+  },
+  {
+    "path": "HW3/outs/UART_tb_output.txt",
+    "bytes": 611
+  },
+  {
+    "path": "Ex09/outs/simulation_output.txt",
+    "bytes": 1016
+  },
+  {
+    "path": "Ex09/outs/README.md",
+    "bytes": 4958
+  },
+  {
+    "path": "Ex09/outs/PWM11_waveforms.png",
+    "bytes": 99536
+  },
+  {
+    "path": "Ex12/outs/simulation_output.txt",
+    "bytes": 565
+  },
+  {
+    "path": "Ex12/outs/README.md",
+    "bytes": 3389
+  },
+  {
+    "path": "Ex12/outs/UART_pass.png",
+    "bytes": 67818
+  },
+  {
+    "path": "Ex11/outs/simulation_output.txt",
+    "bytes": 427
+  },
+  {
+    "path": "Ex11/outs/UART_tx_waveforms.png",
+    "bytes": 94521
+  },
+  {
+    "path": "Ex11/outs/README.md",
+    "bytes": 3147
+  },
+  {
+    "path": "Ex10/outs/simulation_output.txt",
+    "bytes": 881
+  },
+  {
+    "path": "Ex10/outs/PID_debug_pass.png",
+    "bytes": 80189
+  },
+  {
+    "path": "Ex10/outs/README.md",
+    "bytes": 3258
+  }
+]

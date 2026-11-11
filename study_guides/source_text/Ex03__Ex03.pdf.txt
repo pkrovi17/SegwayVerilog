@@ -1,0 +1,67 @@
+    Metastability Recap
+    • Consider the memory loop in a latch
+                         1                0                    0             1
+       D                                            Q D                                Q
+
+
+                  E                                       E
+
+           0             0
+                         1                 01
+      D                                             Q
+
+                                  weak
+                 E =1
+
+    • May become metastable if signal is captured during transition
+       Vout
+               Vout vs Vin (inverter)
+    1.2V                                                      VDD       asynchSig
+                                                    VDD
+                                          1→0        2         2
+    0.6V
+                                      D                             Q
+                                                                                 clk       clk
+
+                                Vin             E
+                  0.6V   1.2V                 1→0                             clk
+1
+    Exercise 03 Synchronizing Edge Detector
+    Submit a structural Verilog file that models a module that can
+    synchronize a signal to our system clock (clk) and output a signal that is
+    high for 1 clock cycle when that signal has a rising edge. Assume a D-FF
+    is already defined that has an interface of:(D, clk,Q,PRN) and a module
+    name of dff.
+       • What do you need to solve metastability?
+       • What do you need to detect a rising edge?
+
+    • Name your file synch_detect.sv and ensure the module name is also
+      synch_detect
+
+    • Your interface should have:
+       asynch_sig_in → input to synchronize and detect rising edge on
+       clk → clock signal
+       rst_n → global asynch active low reset (initialize the circuit) (preset flops in this case)
+       rise_edge → output of your block that is high for 1 clock cycle after rising edge occurs on
+
+
+
+2
+    Exercise 03 Synchronizing Edge Detector
+    Testbench
+    • Download the provided dff.sv and synch_detect_tb.sv
+    • Create a Modelsim project and test your design. The test bench is self-
+      checking and should give a happy message in the console window if
+      your DUT is good.
+
+      → Submit synch_detect.sv
+
+
+    • Once you are done, there are a few extra questions on the submissions
+      page for you to answer.
+
+
+
+
+3
+

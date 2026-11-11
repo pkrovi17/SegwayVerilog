@@ -1,0 +1,30 @@
+! X @ o o oo\
+v ssT
+L &iput
+
+Type Signals
+
+wire PWM1
+
+wire PWM_synch
+reg ck
+
+inteaar colint
+
+5 € >
+
+Signals
+
+PWM1 =x
+
+PWM2 =x
+PWM_synch =x
+ovr_I_blank=x
+
+GTKWave - |
+Marker: 0 sec |
+
+€ = From: 0sec
+
+Waves
+

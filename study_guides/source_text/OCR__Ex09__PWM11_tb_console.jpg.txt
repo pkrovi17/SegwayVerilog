@@ -1,0 +1,22 @@
+File Edit View Compile Simulate Add Transcript Tools Layout Bookmarks Window Help
+
+5 & faged M CHEGH Yt e wopsHELEIELE S O - Layout [simulate ! - .
+& sim - Default + & x| [4a Objects + & x| |aal Wave - Defaut
+v/ Instance Design unit_[Design uritiype _|Top Calegory _ |Visibily | Total coverage v/Name Vaiue [Kind [Mode oo ps | [EH
+=l PWNLL tb PWMLLth  Module DU Instance +acc=<iu.
++- iDUT PWM11 Module DU Instance +acc=<u.
+FALWAYSHLS  PWMILt  Process +aco=<tu
+HNTIAL#LT PWMILth  Process taco=<tu
+o sl s ViPackage Package +aco=<tu
+| #vsim_capacity# Capacity Statistics +acc=<fu,
+
+&8 Processes (Active) CER?
+¥|Name Type (itered) State Order |Parent Path cii
+
+o
+& e Cursor 1 0ps
+
+#1
+# Break in Module PWMI1_tb at /home/pkrovi/Downloads/ece551/Exa9/PMI1_th.sv line 100
+
+Project: EX09 [Now: 903,134 ns Delta: 0 SImPWMLL_H#INTIALELT

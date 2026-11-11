@@ -1,0 +1,40 @@
+File Edit View Compile Simulate Add Wave Tools Layout Bookmarks Window Help
+
+cEH Sy
+
+D2I0-AFT M| SHEGH| Yt @ wopsHEEEBRAS HHO B Layout [simulate v/ - 3-4. G SO Koo LT B &L e e & || 3. 9€. B | Searcn: v| @ Qe L 8% (| [CHN: B ¥
+& sim - Defaut + @ x/| [4a Objects EEEC
+v/ Instance Design unit_|Design unittype |Top Category _|Visibility _|Total coverage v|Name Value [Kind_|Mode e mon > | |
+= PID_Math_to PID_Math_th Module DU Instance o
+- iDUT PID_Math  Module DU Instance o
+HINTIALLT PID_Math_th Process o
+2o sta st ViPackage Package + PID_cni 9 Net internal
+|2 #vsim_capacitys Capacity Statistcs o
+< /PID_Math_b/PID...| 2048
+——
+£ Processes (Active) Hax
+v|Name Type (itered) St |Order |Parent Paih cil
+‘me
+&se Cursor 1 9ps
+oo B Proect | & sim s
+3 Transcript 4 x
+[# Loading project Hu1
+# reading /home/pkrovi /intelFPGA/20.1/modelsin_ase/linuxaloen .. /modelsin. ini
+# Loading project exd6
+# Compile of PID_Math.sv was successful
+# Compile of PID Math_tb.sv was successful
+# 2 compiles, o failed with no errors
+
+vsin work.PID_Math_tb
+
+add wave -radix decimal sim:/PID_Math_tb/ptch
+
+add wave -radix decimal sim:/PID_Math_tb/integrator
+add wave -radix decimal sim:/PID_Math_tb/ptch_rt
+add wave -radix decimal sim:/PID_Math_tb/PID_cntrl
+un -all
+
+1
+|# Break in Module PID_ Math_tb at /home/pkrovi/Downloads/eces51/Ex06/PID Math_tb.sv line 90
+
+0ps 105671027 ps Project:ex06 [Now:5,240 ns Delta: 0 Sim/PID_Math_tb#INITIALELT

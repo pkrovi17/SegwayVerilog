@@ -1,0 +1,88 @@
+HW3 - Pranav Krovi (pkrovi)
+steer_en_SM_tb: PASS
+Actual Icarus Verilog output
+
+Pranav Krovi (pkrovi): all required steering tests passed!
+HW3/steer_en_SM_tb.sv:206: $finish called at 440000 (1ps)
+
+
+HW3 - Pranav Krovi (pkrovi)
+PWM11_tb: PASS
+Actual Icarus Verilog output
+
+VCD info: dumpfile PWM11.vcd opened for output.
+PASS: duty=0x000, high clocks/period: PWM1=0 PWM2=1983
+PASS: duty=0x001, high clocks/period: PWM1=0 PWM2=1982
+PASS: duty=0x03f, high clocks/period: PWM1=0 PWM2=1920
+PASS: duty=0x040, high clocks/period: PWM1=0 PWM2=1919
+PASS: duty=0x041, high clocks/period: PWM1=1 PWM2=1918
+PASS: duty=0x200, high clocks/period: PWM1=448 PWM2=1471
+PASS: duty=0x400, high clocks/period: PWM1=960 PWM2=959
+PASS: duty=0x600, high clocks/period: PWM1=1472 PWM2=447
+PASS: duty=0x7bf, high clocks/period: PWM1=1919 PWM2=0
+PASS: duty=0x7c0, high clocks/period: PWM1=1920 PWM2=0
+PASS: duty=0x7ff, high clocks/period: PWM1=1983 PWM2=0
+All 11 PWM duty tests passed (45056 clock checks)!
+PWM11_tb.sv:100: $finish called at 903134000 (1ps)
+
+
+HW3 - Pranav Krovi (pkrovi)
+PID_dbg_tb: PASS
+Actual Icarus Verilog output
+
+GOOD1: zero in should give zero out
+GOOD2: PID_cntrl should be P_term only
+GOOD3: ss_tmr should be 0x00 since pwr_up=0
+GOOD4: D_term in proper range
+GOOD5: I_term should be 5
+GOOD6: I_term should be 0x11
+GOOD7: I_term should be saturated at 0x7FF
+GOOD8: I_term should be 5
+GOOD9: I_term should be 0, P_term should be 0x0090
+GOOD10: I_term should be 0x7FFA, P_term should be 0x7B80
+GOOD11: PID_cntrl should be saturated negative
+GOOD12: I_term should be 0x7801, P_term should be 0x0240
+GOOD13: ss_tmr should be 0x01
+YAHOO!! all tests passed...my name is Pranav Krovi (pkrovi)
+
+PID_dbg_tb.sv:181: $stop called at 10948195000 (1ps)
+
+
+HW3 - Pranav Krovi (pkrovi)
+PID_extra_tb: PASS
+Actual Icarus Verilog output
+
+Pranav Krovi (pkrovi): all 543 additional PID checks passed!
+PID_extra_tb.sv:129: $finish called at 10884000 (1ps)
+
+
+HW3 - Pranav Krovi (pkrovi)
+UART_tx_tb: PASS
+Actual Icarus Verilog output
+
+VCD info: dumpfile UART_tx.vcd opened for output.
+PASS: byte=0x00, 10 bits, 5208 clocks/bit
+PASS: byte=0xff, 10 bits, 5208 clocks/bit
+PASS: byte=0xa5, 10 bits, 5208 clocks/bit
+PASS: byte=0x3c, 10 bits, 5208 clocks/bit
+PASS: byte=0x81, 10 bits, 5208 clocks/bit
+PASS: byte=0x7e, 10 bits, 5208 clocks/bit
+Pranav Krovi (pkrovi): all 6 UART frames passed (312480 bit-clock checks)!
+UART_tx_tb.sv:102: $finish called at 6252191000 (1ps)
+
+
+HW3 - Pranav Krovi (pkrovi)
+UART_tb: PASS
+Actual Icarus Verilog output
+
+VCD info: dumpfile UART.vcd opened for output.
+PASS: sent=0x00 received=0x00, clr_rdy tested=1
+PASS: sent=0xff received=0xff, clr_rdy tested=0
+PASS: sent=0xa5 received=0xa5, clr_rdy tested=0
+PASS: sent=0x5a received=0x5a, clr_rdy tested=1
+PASS: sent=0x01 received=0x01, clr_rdy tested=0
+PASS: sent=0x80 received=0x80, clr_rdy tested=1
+PASS: sent=0x3c received=0x3c, clr_rdy tested=0
+PASS: sent=0x7e received=0x7e, clr_rdy tested=1
+Pranav Krovi (pkrovi): all 8 UART loopback tests passed!
+UART_tb.sv:115: $finish called at 8453931000 (1ps)

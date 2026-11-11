@@ -1,0 +1,2 @@
+All 12545 tests passed!
+/home/pkrovi/Downloads/ece551/HW2/SegwayMath_tb.sv:122: $finish called at 125450000 (1ps)

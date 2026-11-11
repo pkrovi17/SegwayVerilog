@@ -1,0 +1,15 @@
+PASS: conversion 0 channel=0 value=c00, two transactions
+PASS: conversion 1 channel=4 value=bf4, two transactions
+PASS: conversion 2 channel=5 value=be5, two transactions
+PASS: conversion 3 channel=6 value=bd6, two transactions
+PASS: conversion 4 channel=0 value=bc0, two transactions
+PASS: conversion 5 channel=4 value=bb4, two transactions
+PASS: conversion 6 channel=5 value=ba5, two transactions
+PASS: conversion 7 channel=6 value=b96, two transactions
+PASS: conversion 8 channel=0 value=b80, two transactions
+PASS: conversion 9 channel=4 value=b74, two transactions
+PASS: conversion 10 channel=5 value=b65, two transactions
+PASS: conversion 11 channel=6 value=b56, two transactions
+PASS: conversion 0 channel=0 value=c00, two transactions
+Pranav Krovi (pkrovi): all 13 A2D conversion tests passed!
+Ex20/A2D_tb.sv:135: $finish called at 140081000 (1ps)

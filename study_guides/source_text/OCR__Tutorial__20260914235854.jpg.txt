@@ -1,0 +1,127 @@
+Vs
+
+o o«
+
+- -
+
+C ® guacamole.cae.wisc.edu/#/client/NwBnAHBvc3RncmVzcWw?id_token=eyjraWQiOijk
+
+Apps
+
+a
+
+4
+“
+4
+4
+4
+4
+4
+4
+4
+4
+4
+P
+P
+F
+E-
+4
+4
+4
+4
+4
+4
+4
+
+. Home | Myuw . Compress JPG - PG C...
+
+FE
+
+IDLE
+START_BIT
+BIT 0
+
+RBUISHitReg
+RBUISt
+
+Sep 14 11:58 PM
+
+G
+
+O cs O shopping @ plexus @ Timer &z AnkerGames B8 Prime Video » FMHY @ Open WebUI
+
+< |
+
+B T
+iz
+
+BRI =12
+
+IR =1 R
+
+o <
+
+C
+
+® chatgpt.com/?temporary-chat=true & G“‘ 4]
+
+W Home | Myuw [ Compress JPG-JPGc.. (3 CS [ Shopping & plexus @ Timer &tz AnkerGames B Prime Video » FMHY @ Open WebUl
+
+9]
+
+O% 0@ R
+
+Close the old Wave window.
+
+Then:
+
+Simulate - Start Simulation > work > t_ssp
+
+Once t_ssp is loaded, find [t_ssp in the Sim tab, right-click it and choose:
+Add - Add Wave
+
+Then type:
+
+run -all 8
+According to the PDF, it should finish at:
+1,280,505 ns
+
+Click Zoom Full. Find the signal named 'error and make sure it never goes high. This [ t_ssp
+
+testbench runs all 256 test cases. O ModelsimTutorial 726
+
+8. Take the exact HW1 screenshot
+
+This is what the PDF actually requires.
+
+Keep the main ModelSim window visible. Put/detach the Wave window over it, like Figure 28, but
+arrange it so the Transcript at the bottom is still visible.
+
+Your screenshot needs to show:
+
+« the populated [t_ssp waveform,
+
+« the main ModelSim window,
+
+« the Transcript,
+
+« your username visible in the Transcript.
+
+The PDF specifically says to overlay the Wave window on the main ModelSim window so that your
+username is visible in the Transcript, then take a snapshot. = O ModelsimTutorial 726
+
+On the CAE Linux machine, the PDF says:
+Applications Menu - Accessories - Screenshot
+The final screen should resemble Figure 28 on page 26, not your Q24 D-flip-flop simulation.
+
+If you're at ModelSim right now, the immediate next thing you should do is Compile - Compile All. If
+you send me a screenshot after that first compile, | can guide you click-by-click from exactly what is
+on your screen.
+
+Sources
+
+Q4 <
+
+ChatGPT can make mistakes. Check important info.
+
++ Temporary chat High v &

@@ -1,0 +1,326 @@
+    Exercise 09: PWM (Pulse Width Modulation)
+         period = 2048 clocks         period = 2048 clocks          period = 2048 clocks
+
+
+
+
+         duty=50%                   duty=25%                         duty=75%
+         duty=0x400                 duty=0x200                       duty=0x600
+
+
+    • A PWM signal is used to control the magnitude of something. In our case it will
+        be used to control the magnitude of drive to a DC motor.
+    •   The signal typically will have a fixed frequency, and the duty cycle will determine
+        the magnitude.
+    •   Essentially, we are turning the motor on full bore for the duration of the high
+        pulse of the PWM signal, and off for the remainder of the cycle.
+    •   If the period of the PWM signal is short enough then this on/off control is
+        essentially filtered and looks like a nice analog drive at whatever percentage the
+        duty cycle is.
+1
+    Exercise 09: PWM (Pulse Width Modulation)
+    • PWM is better than analog drive because it is more efficient.
+       •   When the switches to drive the motor are on, they are on hard so have very little
+           resistance and therefore negligible I2R loss.
+       •   When they are off, they have no current therefore no I2R loss.
+       •   If we did an actual analog drive to the motor coils we would have I2R losses over
+           partially on pass elements.
+    • A frequency in the 20kHz area is appropriate for a DC motor. We have a 50MHz
+      clock on the DE0-Nano, so 11-bit period works pretty nice.
+
+                                   50MHz
+                                         = 24.4kHz
+                                    211
+
+
+    • A PWM module cannot achieve both zero duty cycle and 100% duty cycle.
+      If zero means zero duty, then what does 0x7FF mean? It means we are on for
+      2047 out of 2048 clocks, so not quite 100%. But we are fine with this.
+
+
+
+
+2
+    Need for non-overlap
+    • The motors can be driven forward or
+        reverse from the 30V battery
+        through the circuit shown.
+    •   The I/Os of our little FPGA cannot
+        drive large motors directly so there
+        are power MOSFETs involved.
+
+    • PWM1 & PWM2 are complementary
+        signals (opposite of each other) but
+        they also have a non-overlap time
+        (time in which they are both low)                NONOVERLAP
+
+
+
+    • Why is the non-overlap necessary?
+                                                  PWM1
+        •   If both the power MOSFETs in a
+            stack were on, then current would     PWM2
+            be shooting through the transistors
+            from 30V supply to ground.
+        •   We need to ensure both MOSFETs in
+            a stack are never on at same time.
+3
+     PWM11: Implementing non-overlap
+     • Think of the 11-bit free-running counter. It ramps from 0 to 2047 then rolls
+        over to 0 again. Think of it plotted as an analog wave.
+         2047
+
+
+    NONOVERLAP+ duty
+           duty
+
+    NONOVERLAP
+              0
+
+
+
+         PWM1
+
+
+
+         PWM2
+
+
+
+                       NONOVERLAP
+
+                                    • PWM1 runs from NONOVERLAP to duty
+                                    • PWM2 runs from duty+NONOVERLAP to 2047
+4
+    PWM11 Implemention
+     • We will have a localparam called NONOVERLAP                                       Signal        Dir   Description
+       and set it to 11’h040.                                                            clk           in    50MHz system clk
+     • Duty cycles less than NONOVERLAP will result in                                   rst_n         in    Asynch active low
+                                                                        rst_n
+       zero duty cycle. (this is OK for our application)
+                                                                                         duty[10:0]    in    Specifies duty cycle
+                                                                                                             (unsigned 12-bit)
+                                           cnt>=(duty+NONOVERLAP)
+    NONOVERLAP                                                      S                    PWM1          out   Complementary glitch
+                                              &cnt                                       PWM2                free PWM signals with
+                                                                    R            PWM2                        non-overlap
+
+    duty[10:0]                                                                           PWM_synch     out   Use to synch changes
+                           Set/reset                                      clk                                in duty
+                           comb logic
+                                                                                         ovr_I_blank   out   Used to blank out over
+                                                                        rst_n                                current mitigation
+
+
+                      11                       cnt>=NONOVERLAP
+                                                                                           Submit: PWM11.sv &
+                                                                    S
+                                                                                           waveforms showing
+    cnt[10:0]
+                                                cnt>=duty
+                                                                    R            PWM1
+                                                                                           various duty cycles
+                clk                rst_n                                  clk
+                                                            ~|cnt         PWM_synch
+                           +1
+                                                       NONOVERLAP<cnt<NONOVERLAP+128
+
+                                                                                                                ovr_I_blank
+
+                                                     NONOVERLAP+duty<cnt<NONOVERLAP+duty+128
+5
+    PWM_synch & ovr_I_blank
+    • The Duty cycle applied to the PWM is generated from another unit.
+      However, changes in the PWM duty cycle should be synched with the
+      PWM cycle so changes to duty do not occur in the middle of a PWM
+      period.
+    • We need to generate a PWM_synch signal to allow the unit driving duty to
+      synchronize changes in duty to the PWM cycle. This signal can simply be
+      when the 11-bit counter is all zeros.
+
+    • We have an over current detect circuit that will shut down motor drive if
+      instantaneous current in the motor is too high. Over current detect
+      circuits have a tendancy to false trigger early in the application of a new
+      PWM pulse to the motor.
+    • We need to generate a blanking signal, so we ignore the over current
+      detect if we are in the first 128 clock cycles of either PWM1 or PWM2.
+      This signal can be assigned based on range checking cnt vs
+      NONOVERLAP and duty.
+
+6
+    Running PWM11 on DE-0 Nano
+    • We will use your PWM11 block to modulate the intensity of the LED lights
+      on the FPGA board
+    • A push button will be used as system reset
+    • Another push button will be used to incr/decr intensity of LED light
+       • We will have a counter to track intensity value
+       Upper nibble of LEDs will be   LED[2] will vary in intensity   Lowest bit of LEDs will vary in
+       your 4-bit intensity counter   with duty cycle of PWM          intensity with duty cycle of PWM
+
+
+                                                                                 “inc” push button
+
+                                                                                 “RST_n” push button
+
+
+                                                                                Intensity of LED[0]
+                                                                                should increase at first
+                                                                                as counter increases.
+
+                                                                                When count gets to 1111
+                                                                                then counter should
+                                                                                reverse and start
+                                                                                counting down.
+
+7
+    Obtaining a Decent rst_n
+    • On the FPGA board we have a couple of push buttons. We will use one as
+      the source for our asynchronous reset.
+
+    • Generic push buttons can be thought of as a momentary switch to ground
+      with a pull-up resistor.
+          VDD
+                                            rst_n
+
+
+                  rst_n
+       Push
+       Button                     …                 Button pushed   Button released
+                                                                                      When does reset
+                                                                                      deassert relative
+                                                     (has bounce)   (RC approach)
+                                                                                         to clock?
+                      clk   clk       clk
+
+
+      Imagine what a disaster this implementation of a global reset would be!!
+
+    • I want you to build a reset synchronizer to avoid the above
+8
+    Synchronizing a PB reset
+    • Remember, you want your reset de-asserted on the opposite edge of
+      clock that your other flops are active on. This means we want our reset to
+      de-assert (rise) on negative edge of clock.
+        VDD                                            It will have an interface of:
+                                                       •   RST_n = raw input from push button
+                                                       •   clk = clock, and we use negative edge
+               RST_n          rst_n   To the rest      •   rst_n = our syncrhronized output which will
+                                      of your design
+     Push                                                  form the global reset to the rest of our chip.
+     Button
+                       clk
+        VDD
+                                                       Push of the button will asynch reset the two
+                                                       flops. When button is released we have a
+                        rst_synch                      double flopping (metastability reasons) to
+               RST_n                                   produce our global rst_n. The flops are
+                                                       negative edge triggered so our global reset
+    Push
+    Button
+                                                       will deassert on the opposite edge of all our
+              1’b1                    rst_n            other flops.
+
+                                                       Code this reset synch unit (rst_synch.sv)
+9                       clk
+     Synching & Edge Detecting a PB input
+     • Incr/decr intensity value is done using a push button as well
+     • Implement the following circuit and call it PB_release.sv
+
+          VDD
+                  rst_n      rst_n   rst_n
+
+                                             released   Does this look familiar?
+                PB pre       pre     pre
+                                                        • PB is asynch input
+      Push                                              • We need to handle metastability
+      Button                                            • We want to detect a rising edge
+                   clk        clk     clk
+
+                          PB_release.sv
+
+
+
+
+10
+           PWM11_test
+           • PWM11_test.sv is provided and is a wrapper that will use your PWM11 to
+                        vary the intensity of a LED.
+                                 PB_release.sv
+                                                                                                              PWM11_test.sv
+                                                                  up_dwn_cnt4.sv
+
+
+
+
+                                                                                                                                         LED[0] LED[2]
+                                                                               rst_n
+
+
+     inc (from PB)
+                                                         en                                                              PWM1
+                                                                                                               PWM11
+                                                                          0              cnt
+                                                                                                         duty[10:0]      PWM2
+                                                                   +/-     1                    7’h00
+                                                                    1                    4
+                                        rst_n            dwn                       clk
+
+
+
+                                                                                                                                       LED[7:4]
+                                                                                                             (For observability)
+
+
+
+                                         clk
+
+
+
+
+      RST_n (from PB)
+                                                               • The test wrapper will instantiate all the blocks and connect them. You do not
+                                                                 need to modify it.
+
+                                                 rst_n         • You will need to implement a 4-bit up/down counter called up_dwn_cnt4.sv
+                                                               • It is enabled by the signal from PB_release.sv, and is connected to bits
+                                                                 [10:7] of duty. Bits [6:0] of duty will be 0.
+                                                               • The counter will start at 0000 and initially count up with every push of a
+                                                                 button (coming from PB_release.sv). When it hits its full value (1111), it will
+                                                                 toggle a flop and then start counting down.
+11
+     Mapping onto the FPGA
+     • Create an Exercise09 directory under your ECE551 area of your I: drive
+     • Download the PWM11_test.qpf (Quartus Project File) and
+       PWM11_test.qsf(Quartus Settings File) from the website and store in
+       your Exercise09 directory
+     • Ensure the following files reside in the directory:
+       rst_synch.sv, PB_release.sv, up_dwn_cnt4.sv, PWM11_test.sv, PWM11.sv
+
+     • Open up Quartus & open the project file
+        • File → Open Project and open up the PWM11_test.qpf
+        • Make sure the selected device says Cyclone IV E: EP4CE22F17C6
+        • Compile and fix any errors
+     • Demo by Wednesday for Bonus Credit 1%
+        • Tools → Programmer and check that USB Blaster shows up (it takes a bit on CAE machines…)
+
+                                                                       Then click here to select USB-Blaster
+                     If this says No Hardware, click Hardware Setup
+
+
+
+12
+     Mapping onto the FPGA
+     • Program the FPGA
+
+
+
+
+     • Hit “Start” and look for 100% Success
+     • Reset the system, and vary the intensity. You should see LED[0] and
+       LED[2] change intensity.
+
+     • Submit: rst_synch.sv, PB_release.sv, up_dwn_cnt4.sv
+
+
+13
+

@@ -1,0 +1,2 @@
+Pranav Krovi (pkrovi): all 21 additional steering checks passed!
+/home/pkrovi/Downloads/ece551/HW3/steer_en_SM_extra_tb.sv:78: $finish called at 314000 (1ps)

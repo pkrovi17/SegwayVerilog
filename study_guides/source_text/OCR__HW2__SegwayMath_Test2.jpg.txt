@@ -1,0 +1,81 @@
+File Edit View Compile Simulate Add Transcript Tools Layout Bookmarks Window Help
+
+5 & e VM SHBERR | Yt e
+
+& sim-Defaut
+v/ nstance Design unit_[Design unitiype [Top Category _|Visibilfy [Toal coverage
+= SegwayMath_to SegwayMat... Module DU Instance
+
+8 check_outputs SegwayMat... Task
+
+o iDUT SegwayMath Module DU Instance
+
+HINTAL#3 SeguayMa.. Process
+5ol s s ViPackage Package
+| #vsim_capacity# Capacity Statistics +acc=<fu,
+
+100 ps &) L B B+ B ©0
+
+DO
+
+FEE
+
+pa Objects
+¥/ Name
+
+&8 Processes (Active)
+¥/ Name
+
+Layout [simulate
+
+Value [Kind
+
+Type (itered)
+
+Mode
+
+State
+
+Order
+
+Parent Paih
+
++ & x| |aal Wave - Defaut
+T 80w 51
+
+4 x
+cii
+
+&l
+
+Now
+
+43529000 ps
+
+sin: /SeguayMath_tb/steering \
+
+sin: /SeguayMath_tb/expected_1ft \
+sin: /SeguayMath_tb/expected_rght \
+sin: /SeguayMath_tb/expected_fast
+vsin work. SegwayMath_tb
+
+add wave -Tadix decinal sim:/SegwayMath_tb/PID_cntrl
+add wave -Tadix unsigned sim:/Segwayath_tb/ss_tnr
+add wave -Tadix unsigned sim:/SegwayMath_tb/steer_pot
+add wave -Tadix unsigned sim:/SegwayMath_tb/iDUT/steer_pot_sat
+add wave -Tadix decinal sim:/SegwayMath_tb/1ft_spd
+add wave -Tadix decinal sim:/SegwayMath_tb/rght_spd
+add wave sim:/SegwayMath_tb/en_steer
+add wave sin: /SegwayMath_tb/pwr_up
+add wave sin: /SegwayMath_tb/too_fast
+un 43529 ns
+wave zoom range Ons 23040ns
+# {0 ps} {23040 ns}
+wave zoom range 23040ns 43529ns
+# {23040 ns} {43529 ns}
+
+Project: hw2 [Now: 43528 ns Delta: 0
+
+ISegwayMath_toisteer_pot
+
+<

@@ -1,0 +1,348 @@
+ECE551: Digital System Design and Synthesis
+                                        Fall 2026
+
+               Digital Design Process
+Digital Design Process
+
+                                     Description Phase
+What needs to happen?
+
+                                                               Functional
+             Specification     Planning       Design Entry
+                                                                  Test
+
+
+
+
+                                              APR, Parasitic   Manufacture
+                             Post-Synthesis
+              Synthesis           Test
+                                               Extraction &    & Hardware
+                                              Timing Checks     Validation
+
+
+                                  Implementation Phase
+Digital Design Process
+
+   What do I need to make it happen?
+                                       Description Phase
+
+                                                                 Functional
+           Specification         Planning       Design Entry
+                                                                    Test
+
+
+
+
+                                                APR, Parasitic   Manufacture
+                               Post-Synthesis
+            Synthesis               Test
+                                                 Extraction &    & Hardware
+                                                Timing Checks     Validation
+
+
+                                    Implementation Phase
+Digital Design Process
+
+                              Description Phase         How do I describe block diagram in code?
+
+                                                                Functional
+      Specification     Planning       Design Entry
+                                                                   Test
+
+
+
+
+                                       APR, Parasitic          Manufacture
+                      Post-Synthesis
+       Synthesis           Test
+                                        Extraction &           & Hardware
+                                       Timing Checks            Validation
+
+
+                           Implementation Phase
+What is a Hardware Description Language (HDL)?
+• Describes the structure and behavior of hardware circuits
+• Allows for modeling & simulation (with timing) of digital designs
+• Can be synthesized into hardware (netlist) by synthesis tools (Synopsys,
+  Cadence, FPGA compilers)
+• Two major standards in industry & academia
+  • Verilog/SystemVerilog (Flexible, loose, more common in industry)
+  • VHDL (Strongly typed, more common in defense and automotive)
+ What is a Hardware Description Language (HDL)?
+module counter(clk,rst_n,cnt);     • Looks like a programming language, but it is NOT
+  input logic clk,rst_n;           • Remember that this is used to describe hardware
+  output logic [3:0] cnt;           • Think “what hardware does this map to?” when reading Verilog
+                                    • Code should clearly describe the structure & behavior of hardware
+  always_ff @(posedge clk) begin    • We will develop good coding practice to make mapping of
+                                      Verilog → hardware as straight forward as possible
+    if (!rst_n)
+        cnt <= 4’b0000;
+    else                           • This example:
+        cnt <= cnt+1;               • Block where something happens at posedge of clk → Flipflop
+  end                               • If-else → multiplexer
+endmodule                                               rst_n
+                                                        4
+                                              4’b0000       0   4   4
+                                                            1           cnt
+                                                        4
+
+
+                                                   +1
+Why Use an HDL?
+• Enables larger designs – higher level of abstraction
+  • Wide datapaths (16, 32, or 64 bits wide) can be abstracted to a single vector
+  • Register Transfer Level (RTL) description
+  • Synthesis tool does the bulk of the tedious repetitive work
+• Portable Design
+  • Behavioral or dataflow Verilog can be synthesized to a new process library with
+    little effort (i.e., move from 45nm to 22nm process)
+  • Verilog in ASCII text can be used by synthesis tools from multiple vendors
+• Explore larger solution space
+  • Synthesis options and coding styles can help optimize and examine tradeoffs
+    (power, area, speed)
+• Better Validated Designs
+Digital Design Process
+
+                              Description Phase         Does the design behave properly?
+
+
+                                                        Functional
+      Specification     Planning       Design Entry
+                                                           Test
+
+
+
+
+                                       APR, Parasitic   Manufacture
+                      Post-Synthesis
+       Synthesis           Test
+                                        Extraction &    & Hardware
+                                       Timing Checks     Validation
+
+
+                           Implementation Phase
+Simulating / Validating HDL
+• Testbenches provide input stimulus to your design
+• Monitor outputs from your design
+
+
+                                                               Output
+                     Stimulus             Design
+                                                              Monitoring
+                    Generation          Under Test
+                                                             Self Checking
+                     (verilog)           (verilog)
+                                                               (verilog)
+
+
+                        file                                     file
+                                   Verilog testbench shell
+
+
+• Testbenches are written in Verilog as well… but does not describe hardware
+  • Testbench Verilog describes sequence of events → more similar to a program
+Digital Design Process
+
+                              Description Phase         Does the design behave properly?
+
+                                                                        Time spent:
+                                                        Functional
+      Specification     Planning       Design Entry                     • 10% design
+                                                           Test
+                                                                        • 90% validation
+
+
+
+
+                                       APR, Parasitic   Manufacture
+                      Post-Synthesis
+       Synthesis           Test
+                                        Extraction &    & Hardware
+                                       Timing Checks     Validation
+
+
+                           Implementation Phase
+Digital Design Process
+
+                                           Description Phase
+
+                                                                     Functional
+               Specification         Planning       Design Entry
+                                                                        Test
+
+
+
+
+                                                    APR, Parasitic   Manufacture
+                                   Post-Synthesis
+                Synthesis               Test
+                                                     Extraction &    & Hardware
+                                                    Timing Checks     Validation
+What are the actual gates/components used?
+                                        Implementation Phase
+What is Synthesis?
+• Takes a description of what a circuit DOES and create hardware to DO it
+                                                            *Output is actually a text netlist,
+       module circuitF(a,b,c,d,e,f);                        not a GUI schematic form.
+
+        input a,b,c,d,e;
+        output f;                                           c
+                                                                                                  f
+         always_comb begin                Synthesis Tool
+                                           (Synopsys)       d
+           if (a)      f = c & d;
+           else if (b) f = d;                               e
+           else        f = d & e;
+         end                                                                     b      a
+       endmodule
+
+                                                            Estimated power, performance, area
+                                       Timing Constraints
+What is a Netlist?
+• An ASCII text representation of a schematic
+• Many standards exist:
+  • SPICE Netlist
+  • EDIF (Electronic Data Interchange Format)
+  • Structural Verilog Netlist (this is what we will use)
+
+
+          module comb(Z,A,B,C);
+
+           input A,B,C;
+           output Z;                   A                     comb
+                                                 n1
+           wire n1, n2;                    A1
+           and02d1 A1(n1,A,B);
+                                  =    B
+                                                            A2
+           inv01d1 I1(n2,C);               C     I1
+                                                       n2           Z
+           and02d2 A2(Z,n1,n2);
+          endmodule
+Digital Design Process
+
+                                            Description Phase
+
+                                                                      Functional
+                Specification         Planning       Design Entry
+                                                                         Test
+
+
+
+
+                                                     APR, Parasitic   Manufacture
+                                    Post-Synthesis
+                 Synthesis               Test
+                                                      Extraction &    & Hardware
+                                                     Timing Checks     Validation
+
+Does the synthesized netlist behave properly?
+                                         Implementation Phase
+Digital Design Process
+
+                              Description Phase
+
+                                                                 Functional
+      Specification     Planning       Design Entry
+                                                                    Test
+
+
+
+
+                                       APR, Parasitic           Manufacture
+                      Post-Synthesis
+       Synthesis           Test
+                                        Extraction &            & Hardware
+                                       Timing Checks             Validation
+                                                        What is the physical geometry of our design?
+                           Implementation Phase
+Hardware Implementations
+• HDLs can be compiled to semi-custom and programmable hardware
+  implementations
+
+           Full                  Semi-                     Programmable/
+          Custom                Custom                      Configurable
+
+
+                         Standard
+          Manual VLSI                    Gate Array        FPGA      PLD
+                           Cell
+
+                        less work, faster time to market
+                           implementation efficiency
+Standard Cells
+• Library of common gates and structures (cells)
+• Decompose hardware in terms of these cells
+• Arrange the cells on the chip
+• Connect them using metal wiring
+
+
+
+
+                                             …
+Hardware Implementations
+• HDLs can be compiled to semi-custom and programmable hardware
+  implementations
+
+           Full                  Semi-                     Programmable/
+          Custom                Custom                      Configurable
+
+
+                         Standard
+          Manual VLSI                    Gate Array        FPGA      PLD
+                           Cell
+
+                        less work, faster time to market
+                           implementation efficiency
+Field Programmable Gate Arrays (FPGAs)
+• “Programmable” hardware
+• Use small memories as truth tables of functions
+• Decompose circuit into these blocks
+• Connect using programmable routing
+• SRAM bits control functionality
+
+
+                              FPGA Tiles             P1
+                                                P2
+               P                                     P3          OUT
+                                                P4
+                                                     P5
+                                                P6
+                                                     P7
+                                                P8
+                                                          I1 I2 I3
+Hardware Implementations
+• HDLs can be compiled to semi-custom and programmable hardware
+  implementations
+
+           Full                  Semi-                     Programmable/
+          Custom                Custom                      Configurable
+
+
+                         Standard
+          Manual VLSI                    Gate Array        FPGA      PLD
+                           Cell
+
+                        less work, faster time to market
+                           implementation efficiency
+Digital Design Process
+
+                              Description Phase
+
+                                                        Functional
+      Specification     Planning       Design Entry
+                                                           Test
+
+
+
+
+                                       APR, Parasitic   Manufacture
+                      Post-Synthesis
+       Synthesis           Test
+                                        Extraction &    & Hardware
+                                       Timing Checks     Validation
+
+
+                           Implementation Phase
+

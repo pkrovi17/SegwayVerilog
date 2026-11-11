@@ -1,0 +1,2 @@
+Pranav Krovi (pkrovi): all 56 multiply-accumulate checks passed!
+Ex18/mult_accum_tb.sv:90: $finish called at 560000 (1ps)

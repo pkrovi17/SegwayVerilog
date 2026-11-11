@@ -1,0 +1,143 @@
+File Edit View Compile Simulate Add Transcript Tools Layout Bookmarks Window Help
+
+- H ColumnLayou [{TTColumns
+
+~a-a-ga-3] 0
+
+T
+
+EET
+
+Searc\w’iﬂsj@‘”,“ ® G @ B
+
+Nrny
+
+I
+
+[I] omelpkroviDownloadsiece551/HW2Isaturate_tb,sv (saturate_to) - Default EEET
+L | [ how| 1] »
+1 tinescale 1ns/lps =
+2
+3 EBmodule saturate_tb();
+4
+5 | reg [15:0] unsigned err;
+6 | wire [9:0] unsigned_err sat;
+7 | reg signed [15:0] signed err;
+8 | wire signed (9:0] signed_err sat;
+9 | reg signed [9:0] signed D_diff;
+10 | wire signed (6:0] signed D_diff sat;
+1
+12 | integer i;
+13 | integer expected;
+1
+15 | /111117 Instantiate OUT /77711111
+16 B saturate iDUT(.unsigned_err(unsigned_err), .unsigned_err_sat(unsigned_err_sat),
+17 signed_err(signed_err), .signed_err_sat(signed_err_sat),
+18 signed_D_diff(signed D_diff), .signed D_diff sat(signed D_diff sat));
+19
+20 @ initial begin
+2 unsigned_err
+2 signed_err
+23 signed D_diff =
+2
+25 11 try every unsigned input
+2 @ for (i=0;i<655%; i=1+1) begin
+27 unsigned_err = i;
+28 if (i > 1023)
+2 expected = 1023;
+30 else
+31 expected = i
+2 #1; /1 allow output to settle
+33 if (unsigned_err_sat 1== expected(9:0]) begin
+34 Sdisplay("ERROR: unsigned_err=30d: got %0d, expected %0d",
+35 unsigned_err, unsigned_err_sat, expected) ;
+36 sstop();
+37 end
+38 end
+39
+0 11 try every signed error
+41 @ for (i=-32768; i< 32768; i =1+ 1) begin
+a2 signed_err = i;
+a3 if (1> 511)
+a4 expected = 511;
+45 else if (i < -512)
+46 expected = -512;
+a7 else
+48 expected = i;
+43 #;
+50 if (signed_err_sat 1= expected(9:0]) begin
+51 Sdisplay("ERROR: signed_err=40d: got %0d, expected %0d",
+52 signed_err, signed_err_sat, expected);
+53 sstop();
+54 end
+55 end
+56
+57 11 try every derivative input
+58 B for (i=-512; i<512; i=1+1) begin
+59 signed D_diff =
+60 if (1> 63)
+61 expected = 63;
+62 else if (i < -64)
+63 expected = -64;
+64 else
+65 expected = i;
+66 #;
+67 if (signed D_diff sat I== expected(6:0]) begin
+68 Sdisplay("ERROR: signed D_diff=%0d: got %0d, expected %0d",
+69 signed D_diff, signed D_diff sat, expected);
+7 sstop();
+7 end
+72 end
+7
+7 Sdisplay("tests passed!");
+75 sFinish();
+76 |end
+7
+78 L endnodule
+7
+=i
+I
+Wave - | satasv | ] saturat ">
+[+] 2] x]
+a]
+v
+
+B S G IRWBD2 0 AL || CHBRAN]| Vtes F walARBNs DWO[ 1% 3 4| wonfinge
+& sim - Default + @ x|| [ Objects EEE
+v/ instance [Design unit_|Design unittype |Top Category _|Visibility |Total coverage |
+=l saturate_th saturate_ b Module DU Instance +acc=<fu.
+
+2 iDUT| saturate Module DU Instance
+D #ASSIGN#15  saturate Process - signed_ Pack... Internal
+D #ASSIGN#18  saturate Process o signed_er_ Net Internal
+‘D #ASSIGN#19  saturate Process - signed_D_diff Pack... Internal
+@ #ASSIGN#20  saturate Process = signed_D_diff_sat mal
+P #ASSIGN#24  saturate Process -
+D #ASSIGN#25  saturate Process -
+‘d #ASSIGN#26  saturate Process -
+o std std ViPackage Package
+& #vsim_capacity Capacity Statistics
+%8 Processes (Active) EEES
+*|Name Type (fitered) Parent Path
+Tibrary [ Project - | & sm 2]
+sim: /saturate_tb/iDUT/signed_err \
+sim: /saturate_tb/iDUT/signed_err_sat \
+sim: /saturate_tb/iDUT/signed D_diff \
+sim: /saturate_tb/iDUT/signed_D_diff_sat
+VS5 zun
+add wave -position insertpoint sim:/saturate_tb/iDUT/*
+VS 7>z
+VS o estart -1
+VSIM 9> add wave sim:/saturate_tb/iDUT/*
+VS 10 un a1
+|# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart’
+l# Loading work.saturate_tb
+l# tests passed!
+[# ** Note: $finish : /home/pkrovi/Downloads/ece551/H2/saturate_tb.sv(75)
+|#  Time: 132096 ns Iteration: 0 Instance: /saturate_tb
+-
+|# Break in Module saturate_tb at /home/pkrovi/Downloads/ece551/Hi2/saturate_tb.sv line 75
+VS 11> clear
+# O[HO[2J0[3J
+Profet: i [Now: 132,096 ns Dl L Smisatiree b
+

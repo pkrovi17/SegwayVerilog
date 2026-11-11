@@ -1,0 +1,77 @@
+HW3 - Pranav Krovi (pkrovi)
+PWM11l_tb: PASS
+Actual Icarus Verilog output
+
+VCD info: dumpfile PWM1l.vcd opened for output.
+
+PASS:
+PASS:
+PASS:
+PASS:
+PASS:
+PASS:
+PASS:
+PASS:
+PASS:
+PASS:
+PASS:
+
+duty=0x000,
+duty=0x001,
+duty=0x03f,
+duty=0x040,
+duty=0x041,
+duty=0x200,
+duty=0x400,
+duty=0x600,
+duty=0x7bf,
+duty=0x7c0,
+duty=0x7ff,
+
+high
+high
+high
+high
+high
+high
+high
+high
+high
+high
+high
+
+clocks/period:
+clocks/period:
+clocks/period:
+clocks/period:
+clocks/period:
+clocks/period:
+clocks/period:
+clocks/period:
+clocks/period:
+clocks/period:
+clocks/period:
+
+PWM1=0
+PWM1=0
+PWM1=0
+PWM1=0
+PWM1=1
+
+PWM1=448 PWM2=1471
+
+PWM2=1983
+PWM2=1982
+PWM2=1920
+PWM2=1919
+PWM2=1918
+
+PWM1=960 PWM2=959
+
+PWM1=1472 PWM2=447
+
+PWM1=1919 PWM2=0
+PWM1=1920 PWM2=0
+PWM1=1983 PWM2=0
+ALl 11 PWM duty tests passed (45056 clock checks)!
+PWM11_tb.sv:100: $finish called at 903134000 (1ps)

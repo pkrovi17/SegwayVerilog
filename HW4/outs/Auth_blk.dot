@@ -1,0 +1,23 @@
+digraph Auth {
+  graph [rankdir=TB, bgcolor="white", pad=0.3, nodesep=0.8, ranksep=1.0,
+         fontname="DejaVu Sans", fontsize=20, labelloc=t,
+         label="HW4 Authentication FSM - Pranav Krovi (pkrovi)\n\nDefaults: next state = current state; pwr_up determined by state.\nEvery received UART byte is acknowledged: clr_rx_rdy = rx_rdy."];
+  node [shape=ellipse, style=filled, fillcolor="#eaf3fb", fontname="DejaVu Sans", fontsize=19];
+  edge [fontname="DejaVu Sans", fontsize=15];
+  reset [shape=plaintext, style="", label="!rst_n (asynchronous reset)"];
+  OFF [label="OFF (00)\npwr_up=0"];
+  ON [label="POWERED (01)\npwr_up=1"];
+  WAIT [label="WAIT_RIDER_OFF (10)\npwr_up=1"];
+  reset -> OFF;
+  OFF:e -> OFF:e [label="!G"];
+  OFF -> ON [label="G"];
+  ON:w -> ON:w [label="!S"];
+  ON -> OFF [constraint=false, label="S && R"];
+  ON -> WAIT [label="S && !R"];
+  WAIT:e -> WAIT:e [label="!G && !R"];
+  WAIT -> ON [constraint=false, label="G (cancels pending stop)"];
+  WAIT -> OFF [constraint=false, label="!G && R"];
+  key [shape=box, style="rounded,filled", fillcolor="#f5f5f5", fontsize=15,
+       label="G = rx_rdy && rx_data == 0x47 ('G')\lS = rx_rdy && rx_data == 0x53 ('S')\lR = rider_off\lUnrecognized bytes are ignored.\lA new G has priority over R in WAIT_RIDER_OFF.\lIllegal state 11: pwr_up=0, next state OFF.\l"];
+  WAIT -> key [style=invis];
+}

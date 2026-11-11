@@ -1,0 +1,25 @@
+    Exercise 08: Inferring FFs
+    • Below is the implementation of a D-latch
+        module latch(d,clk,q);
+          input d, clk;                   Is this code correct?
+          output reg q;                   If so why does it correctly infer
+          always @(clk)                   and model a latch?
+            if (clk)                      If not, what is wrong with it?
+              q <= d;
+
+        endmodule
+
+    • Submit a single file called HW2_prob5.sv containing the following:
+       1. In the comments, answer the question about the latch posed above.
+       2. Model a D-FF with an active high synchronous reset.
+       3. Model a D-FF with asynchronous active low reset and an active high enable.
+       4. Model an SR FF with active high synchronous reset, and an active high synchronous
+          set. SR meaning it has an S input that will set the flop, and an R input that will reset
+          the flop. It maintains state if neither S or R are high. If both S and R were asserted R
+          would have priority. It also has active low async reset. This is a handy style flop that
+          we will use frequently.
+       5. Answer the following in comments: Does the use of the always_ff construct ensure
+          the logic will infer a flop? Looking for a little more than a simple yes/no answer.
+      You should use always_ff in your design above and have separate always blocks for each.
+1
+

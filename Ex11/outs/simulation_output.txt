@@ -1,0 +1,9 @@
+VCD info: dumpfile UART_tx.vcd opened for output.
+PASS: byte=0x00, 10 bits, 5208 clocks/bit
+PASS: byte=0xff, 10 bits, 5208 clocks/bit
+PASS: byte=0xa5, 10 bits, 5208 clocks/bit
+PASS: byte=0x3c, 10 bits, 5208 clocks/bit
+PASS: byte=0x81, 10 bits, 5208 clocks/bit
+PASS: byte=0x7e, 10 bits, 5208 clocks/bit
+Pranav Krovi: all 6 UART frames passed (312480 bit-clock checks)!
+Ex11/UART_tx_tb.sv:102: $finish called at 6252191000 (1ps)

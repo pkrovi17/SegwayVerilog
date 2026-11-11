@@ -1,0 +1,6 @@
+HW3 - Pranav Krovi (pkrovi)
+steer_en_SM_tb: PASS
+Actual Icarus Verilog output
+
+Pranav Krovi (pkrovi): all required steering tests passed!
+HW3/steer_en_SM_tb.sv:206: $finish called at 440000 (1lps)

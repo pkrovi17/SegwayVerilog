@@ -1,0 +1,247 @@
+ECE551: Digital System Design and Synthesis
+                                       Fall 2026
+
+               Finite State Machines
+FSM Review
+• Often used to generate control signals
+• Reacts to inputs (including clock signal)
+                                                        Inputs
+• Can perform multi-cycle operations                                      Next State                Output   Outputs
+                                                                          Logic
+• Combinational and sequential logic                                                                Logic
+
+                                                                          State Register
+• Examples of FSMs:                                                                    Next State
+                                                                 Current State
+  • Counter                                                                      FF
+  • Vending machine
+  • Traffic light controller                                                     clk
+  • Bus Controller
+  • Control unit of serial protocol (like RS232, I2C or SPI)
+FSM Review
+• Moore
+  • Output depends only on current state                                          Mealy
+  • Outputs are synchronous (but not necessarily   Inputs
+    glitch free)                                                     Next State                Output   Outputs
+                                                                     Logic                     Logic
+
+• Mealy                                                              State Register
+  • Output depends on current state and inputs
+                                                            Current State         Next State
+  • Outputs can be asynchronous                                             FF
+    • Change with changes on the inputs
+  • Outputs can be synchronous                                              clk
+    • Register the outputs
+    • Outputs delayed by one cycle
+FSM example
+• Given the datapath for a single slope A2D converter, draw a state (bubble) diagram
+  for an FSM that can control it.
+• It should run the converter for Analog_in
+  8 times and accumulate the                                     -
+                                                                                   gt
+  8 results in a 13-bit register.   clr_dac
+                                             DAC       10-bit    +
+                                            Counter     DAC
+  The upper 10-bits of which are    inc_dac         10
+
+  used as the result.                        clk
+
+
+
+                                                                              0
+                                                                                                  result
+                                                                    13                       10
+                                                                                  13
+                                                                              1
+                                                                         13
+                                                       {000,cnt}                       clk
+                                                                   13
+                                   clr_smp               Digital
+                                             Sample
+                                                        Compare                                   smp_eq_8
+                                  inc_smp    Counter
+                                                          To 7
+
+
+                                               clk                        accum
+FSM example
+• Single slope A2D converter:
+               Analog_in
+
+                                                   -
+                clr_dac                                       gt
+                            DAC           10-bit   +
+                inc_dac    Counter         DAC
+                                     10
+                            clk
+
+
+
+                  3.3V
+
+    Analog Input=2.75V
+
+
+
+
+                                                       time
+FSM example
+• What are the state machine inputs & outputs?
+  • All control inputs in the datapath are state machine outputs
+
+  Inputs     Outputs                 Analog_in
+
+  gt         clr_dac                                                             -
+                                      clr_dac                                                              gt
+  smp_eq_8   inc_dac                              DAC             10-bit         +
+                                      inc_dac    Counter           DAC
+                                                           10
+  strt_cnv   clr_smp
+                                                  clk
+  clk        inc_smp
+
+  rst_n      accum
+                                                                                       0
+                                                                                                           result
+             cnv_cmplt                                                      13                        10
+                                                                                           13
+                                                                                       1
+                                                                                 13
+                                                            {000,cnt}                           clk
+                                                                           13
+                                      clr_smp                    Digital
+                                                 Sample
+                                                                Compare                                    smp_eq_8
+                                      inc_smp    Counter
+                                                                  To 7
+
+
+                                                   clk                               accum
+FSM example
+• State/Bubble diagram:
+          rst_n
+
+
+
+
+                                  CNV
+                  IDLE
+
+
+
+
+                          ACCUM
+FSM example
+• State/Bubble diagram:
+              strt_cnv
+      rst_n               clr_dac,clr_smp         gt/ inc_dac
+
+
+
+
+                                            CNV
+                 IDLE
+
+
+
+
+                            ACCUM
+Coding FSM
+• What is the best way to code FSM?
+  • Best to separate combinational (blocking) from
+    sequential (non-blocking)
+    → Combinational logic here is more complex and not
+    guaranteed to evaluate in 1 sim cycle
+
+  • Output logic and state transition logic can be coded in
+    the same always block since they have the same inputs
+
+  • Output logic and state transition logic are ideally suited
+    for a case statement
+   Simple Example
+      • Let’s code this simple example:                                                   always_comb
+                                                                                            case (state)
+                           b=0 / Y=1                 module fsm(clk,rst_n,a,b,Y,Z);           S0 : if (a) begin
+                           a=0 / Y=1
+                                                       input clk,rst_n,a,b;                          nxt_state = S1;
+            a=0            a=1 / Y=1
+                                                       output reg Y,Z;                               Z = 1; end
+                                                                                                   else
+                  a = 1/
+                  Z=1                                  typedef enum reg [1:0] {S0, S1,               nxt_state = S0;
+            S0              S1                                                                S1 : begin
+                                                                          S2} state_t;
+                                                       state_t state,nxt_state;                      Y=1;
+                                 b = 1/ Z = 1, Y=1                                                   if (b) begin
+rst_n = 0
+                                                       always_ff @(posedge clk,                         nxt_state = S2;
+                                                                   negedge rst_n)                       Z=1;
+                            S2                           if (!rst_n)                                 end else
+                                                                                What problems do        nxt_state = S1;
+                                                           state <= S0;
+                                                                                we have here?
+                                                         else                                        end
+        Outputs Y and Z are 0,
+                                                           state <= nxt_state;                S2 : nxt_state = S0;
+        unless specified otherwise.
+                                                                                            endcase
+                                                                                          endmodule
+   Simple Example
+      • Let’s code this simple example:                                            S1 : begin
+                                                                                              Y=1;
+                           b=0 / Y=1                                                          if (b) begin
+                           a=0 / Y=1                 always_comb
+                                                                                                 nxt_state = S2;
+            a=0            a=1 / Y=1                   nxt_state = S0;
+                                                       Z=0;                                      Z=1;
+                                                                                              end else
+                  a = 1/                               Y=0;
+                  Z=1                                  case (state)                              nxt_state = S1;
+            S0              S1                                                                end
+                                                         S0 : if (a) begin
+                                                                 nxt_state = S1;       default : nxt_state = S0;
+                                 b = 1/ Z = 1, Y=1                                   endcase
+rst_n = 0                                                        Z = 1; end
+                                                              else                 endmodule
+                                                                 nxt_state = S0;
+                            S2
+
+
+        Outputs Y and Z are 0,
+        unless specified otherwise.
+   Simple Example
+      • Let’s code this simple example:                                                      S1 : begin
+                                                                                                        Y=1;
+                           b=0 / Y=1                                                                    if (b) begin
+                           a=0 / Y=1                 always_comb
+                                                                                                           nxt_state = S2;
+            a=0            a=1 / Y=1                   nxt_state = S0;
+                                                       Z=0;                                                Z=1;
+                                                                                                        end else
+                  a = 1/                               Y=0;
+                  Z=1                                  case (state)                                        nxt_state = S1;
+            S0              S1                                                                          end
+                                                         S0 : if (a) begin
+                                                                 nxt_state = S1;                 default : nxt_state = S0;
+                                 b = 1/ Z = 1, Y=1                                             endcase
+rst_n = 0                                                        Z = 1; end
+                                                              else                           endmodule
+                                                                 nxt_state = S0;
+                            S2
+
+
+        Outputs Y and Z are 0,                          Defaulting of assignments and having a default
+        unless specified otherwise.                     to the case is highly recommended!
+FSM Coding Guidelines
+1. Keep state assignment in separate always_ff block using non-blocking “<=“
+   assignment
+2. Code state transition logic and output logic together in an always_comb block
+   using blocking assignments
+3. Assign default values to all outputs, and the nxt_state registers. This helps avoid
+   unintended latches
+4. Remember to have a default to the case statement.
+  • Default should be (if possible) a state that transitions to the same state as reset would take the
+    SM to.
+  • Avoids latches
+  • Makes design more robust to spurious electrical/cosmic events.
+

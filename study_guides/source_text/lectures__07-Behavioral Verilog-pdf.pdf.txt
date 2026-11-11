@@ -1,0 +1,219 @@
+ECE551: Digital System Design and Synthesis
+                                     Fall 2026
+
+                Behavioral Verilog
+Behavioral Verilog
+• Structural: connect existing blocks
+• Dataflow: specify exactly how each bit is manipulated
+• Behavioral: describe what the hardware should do as a procedure
+
+• Goal: abstract away the details of the hardware implementation to
+  make design easier
+
+• The synthesizer creates a hardware structures that does the same thing
+  as your description
+  • … but the synthesizer has to be able to realize your description using real hardware constraints
+  • This is why not all Verilog constructs are supported
+  • You still need to “think hardware” then describe it using Verilog
+Behavioral Verilog
+• All behavioral statements occur in procedural blocks: initial, always
+  • Statements are evaluated top to bottom (look a lot like C code)
+  • All <LHS> assignments must be to type reg or logic
+  • initial and always blocks cannot be nested
+  • Can have multiple blocks, all evaluate concurrently
+
+• initial statements start at time 0 and execute once
+  • Multiple initial blocks will all start at time 0 and execute independently
+  • Not synthesizable, use only in testbench
+    • If you are tempted to use initial blocks in your design, it means you are not resetting the flops
+      you need to reset
+• always statements will evaluate continuously
+  • Synthesizable
+initial Statement Example
+`timescale 1 ns / 100 fs
+
+module full_adder_tb;
+  reg [3:0] stim;
+  wire s, c;                                                           All initial blocks start at time 0
+ // instantiate DUT
+  full_adder iDUT(sum, carry, stim[2], stim[1], stim[0]);
+
+  // monitor statement is special - only needs to be made once
+  initial $monitor(“%t: s=%b c=%b stim=%b”, $time, s, c, stim[2:0]);
+
+  // tell our simulation when to stop
+  initial #50 $stop;
+
+  // stimulus generation
+  initial begin
+    for (stim = 4’h0; stim < 4’h8; stim = stim + 1) begin      Not a very good example…
+      #5;                                                      • Do we need 3 initial blocks here?
+    end
+  end
+                                                               • Are these begin/end pairs necessary?
+endmodule
+ initial Statement Example
+module stim();     What events at what times will a       Time       Event
+                   verilog simulator produce?
+ reg m,a,b,x,y;                                       0          m = 1’b0
+
+ initial                                              5          a = 1’b1
+   m = 1’b0;
+                                                      10         x = 1’b0
+ initial begin
+   #5 a = 1’b1;                                       30         b = 1’b0
+   #25 b = 1’b0;
+                              Modelsim
+ end                                                  35         y = 1’b1
+
+ initial begin                                        50         $finish
+   #10 x = 1’b0;
+   #25 y = 1’b1;
+ end
+
+ initial
+   #50 $finish;
+
+endmodule
+always Statements
+• Operates continuously (always)
+ • Executes at time 0, but loops continuously
+ • Can use a trigger list to control operation (sensitivity list)
+   • @(a,b,c)
+   • In absence of a trigger list, it will re-evaluate when the last <LHS> assignment completes
+
+
+ module clock_gen (output reg clock);
+
+   initial
+     clock = 1’b0;       // must initialize in initial block
+
+   always                // no trigger list for this always
+     #10 clock = ~clock; // always will re-evaluate when
+                         // last <LHS> assignment completes
+ endmodule
+Sensitivity Lists
+• Conditionally evaluate inside of always block
+  • Any change on sensitivity list triggers block
+        always @(a,b,c) begin
+          ...
+        end
+
+• Original way to specify trigger list: always @(a or b or c)
+• In Verilog 2001 can use , instead of or: always @(a, b, c)
+• Verilog 2001 also has * for combinational only: always @(*)
+  • Anything on the RHS of assignments are included in the list
+        always @(*)
+          if (a==b) c = d ^ e;        Sensitivity list is @(a,b,d, e)
+          else c = d;
+always_comb
+• System Verilog introduced always_comb
+ • Does not have a sensitivity list
+ • More descriptive than always@(*)
+ • Simulator will warn if you did not infer combinational logic with it
+
+                                                   SM state transition logic & output logic
+                                                   are purely combinational
+
+
+                                                             n
+                                                    state                           h
+                                                                                        nxt_state
+                                                                   SM nxt_state
+                                                                   & output logic
+                                               SM_inputs                                SM_outputs
+                                                            m                       k
+Flip Flop Inference
+• Output of flip flops change at the rising (or falling) edge of clock
+• Described using always block
+• In sensitivity list, specify edge-sensitive to clock (vs level-sensitive)
+  • Block evaluated when there is an edge (vs when signal value changes)
+  • Use keywords posedge and negedge
+• A posedge is on the transitions
+  • 0 → x, z, 1                                   reg q;
+                                                                           d         q
+  • x, z →1
+                                                  always @(posedge clk)
+• A negedge is on the transitions                   q <= d;                    clk
+
+  • 1 → x, z, 0
+  • x, z → 0
+Flip Flop Inference
+• D-FF with no reset
+   reg q;
+                                d              q
+   always @(posedge clk)
+     q <= d;
+                                    clk
+                                                            Be careful… Yes, a non–reset flop is smaller
+                                                            than a reset Flop, but most of the time you need
+• Infer multiple D-FFs with no reset                        to reset your flops.
+
+   reg [11:0] q;                                            Always err on the side of resetting the flop if you
+                           result[11:0]
+                                          12       12
+                                                        q
+                                                            are at all uncertain.
+   always @(posedge clk)
+     q <= result[11:0];
+                                               clk
+Flip Flop Inference
+• D-FF with synchronous reset
+   reg q;
+                                                        Many cell libraries don’t contain synchronous reset
+                              d
+   always @(posedge clk)                     q          flops. This means the synthesizer will have to
+                           rst_n
+     if (!rst_n)                                        combine 2 (or more) standard cell to achieve the
+       q <= 1’b0;
+     else                                               desired function.
+                                      clk
+       q <= d;
+
+
+• D-FF with asynchronous reset                          Cell libraries will contain an asynch reset flop. It is
+                                                        usually only slightly larger than a flop with no reset.
+   reg q;                                   rst_n
+                                                        This is probably your best bet for most flops.
+   always @(posedge clk, negedge rst_n)      R          Reset has its affect asynchronous from clock.
+     if (!rst_n)                        d           q
+                                                        What if reset is deasserting at the same time as a
+       q <= 1’b0;
+     else                                               +ve clock edge? Is this the cause of a potential
+       q <= d;                               clk        metastability issue?
+Flip Flop Inference
+• Conditionally enabled Flops                        rst_n
+ reg q;
+
+ always @(posedge clk, negedge rst_n)
+                                                0     R
+   if (!rst_n)
+     q <= 1’b0; //asynch reset                               q
+                                                1
+   else if (en)                             d
+     q <= d;     //conditionally enabled
+   else                                         en    clk
+     q <= q;     //keep old value
+
+
+  omit this since it is redundant
+  reg type maintains old value by default
+Flip Flop Inference in System Verilog
+• System Verilog introduced always_ff
+ • Tells the tool you intend to infer a flip flop
+ • Will get warning if it did not infer a flop
+
+
+    module simple_ff(input clk,d,rst_n,             module simple_ff(input clk,d,rst_n,
+                     output q);                                      output q);
+
+    reg q;                                          logic q;
+
+    always @(posedge clk, negedge rst_n)            always_ff @(posedge clk, negedge rst_n)
+      if (!rst_n)                                     if (!rst_n)
+        q <= 1’b0;                                      q <= 1’b0;
+      else                                            else
+        q <= d;                                         q <= d;
+    endmodule                                       endmodule
+              Standard Verilog                                  System Verilog
+

@@ -1,0 +1,188 @@
+ECE551: Digital System Design and Synthesis
+                                             Fall 2026
+
+                Simulation Mechanism
+             Timing Control for Simulation
+Digital Simulation
+• Software that models the behavior of your circuit
+• Takes your design → model nets in the design
+  • Keep track of their values at every point in time
+• Takes your testbench → sequence of input values applied over time
+
+• When inputs change, will need to recompute values
+
+        0                  1                   0                  1
+        0            1            1            0            0             1
+                           1                            0        1
+        1     1                                0
+        1            1                         1            1
+        0                                      0                Too much work, too slow
+                                                                Event-driven simulation instead
+Event-Driven Simulation
+• When an input to circuit changes, put it on a “changed” list
+• Loop while the “changed” list isn’t empty
+  • Remove a signal from the “changed” list
+  • For each sink of the signal
+    • Recompute its new output(s)
+    • For any output(s) that have changed value, add that signal to the “changed” list
+• When the “changed” list is empty:
+  • Keep simulation results
+  • Advance simulation time to the next stimulus (input) event
+Digital Simulation
+• When an input to circuit changes, put it on a “changed” list
+• Loop while the “changed” list isn’t empty
+  • Remove a signal from the “changed” list
+  • For each sink of the signal
+     • Recompute its new output(s)
+     • For any output(s) that have changed value, add that signal to the “changed” list
+• When the “changed” list is empty:
+  • Keep simulation results
+  • Advance simulation time to the next stimulus (input) event
+
+          0                            1                 0                           1
+          0                  1                 1         0                  0             1
+                                      1                            0                1
+          1         1                                    0
+          1                  1                           1                  1
+          0                                              0
+
+
+                                             Changed list: 0 0         0
+Functional vs Timing Simulation
+• Functional simulation
+  • Verifies logic correctness
+  • Model with idealized delay
+  • We spend most of the RTL design time here
+
+• Timing simulation
+  • Standard Delay Format (SDF) file contains propagation delays for gates and wires
+  • Annotate netlist with delays and simulate to verify functional correctness
+  • Vector dependent
+Timing Controls for Simulation
+• Can put “delays” in a Verilog design
+  • Gates, wires, behavioral statements
+• Delays are useful for simulation only!
+  • Used to approximate “real” operation while simulating
+  • Used to control testbench
+  • Ignored by synthesis tool
+• Types of delays
+  • Inertial delays (Gates)
+    • Gates need to have inputs held a certain time before output is accurate
+    • Suppresses pulses shorter than delay amount
+  • Transport delays (Nets)
+    • “Time of flight” from source to sink
+    • Short pulse transmitted
+Delay Examples
+• Inertial delay
+     and #4 (z_out, x_in, y_in);   // 4 unit inertial delay
+     assign #3 z_out = a & b;      // 3 unit inertial delay
+
+
+
+• Transport delay
+     wire   #5   net_1;            // 5 unit transport delay
+
+
+
+
+• Used together
+     wire #2 z_out;                // 2 unit transport delay
+     and #3 (z_out, x_in, y_in);   // 3 for gate, 2 for wire
+
+     wire #3 c;                    // 3 unit transport delay
+     assign #5 c = a & b;          // 5 for assign, 3 for wire
+Combinational Logic Will Generate Pulses
+      A                                 • Have 3 Flops with a unit delay clk2q
+          0➔1
+                    n1                  • Feeds simple combinational logic with unit gate delays
+                1
+                         1   out
+      B                                 • A,B,C make the transitions shown
+      1➔1
+                                        • What does “out” do?
+      C
+          1➔0
+                              clk
+
+clk                                A
+
+                                   B
+
+                                   C
+
+                                   n1
+
+                               out
+Inertial Delay
+       A
+           0➔1
+                     n1                        • If we add a buffer with a 2 unit delay to the
+                 1              n2
+       B
+                          1          2   out     end of this circuit, now what happens?
+       1➔1
+                                               • Remember the inertial gate delay will filter
+       C
+                                                 any pulse shorter than the specified delay
+           1➔0
+
+
+
+ clk
+                          clk
+
+                          n2
+
+                          out
+Gate Delay Variation
+• Gates don’t have same delay in a rising transition vs falling
+• Gate delays are not constant
+  • Vary with PVT (Process, Voltage, Temperature)
+  • You will hear reference to PVT corners
+    • {fff, typ, sss} = {min, typ, max}
+
+
+
+
+                      NOR Gate:
+    A                                                       Z
+                      Slow on rise
+                      Fast on fall        A         NAND3 Gate:
+    B
+                                                    Roughly equal
+                             Z            B         Rise/fall
+                                          C
+Gate Delay Variation
+• Gates don’t have same delay in a rising transition vs falling
+• Gate delays are not constant
+  • Vary with PVT (Process, Voltage, Temperature)
+  • You will hear reference to PVT corners
+    • {fff, typ, sss} = {min, typ, max}
+
+
+• Analyze circuit speed using worst case operating condition
+  • Is it fast enough?
+    • Worst case = longest (max) delay
+  • Race conditions?
+    • Worst case = shortest (min) delay
+Verilog Syntax for Delay Variations
+• Rise/Fall/Turn off
+ not #(2,1) inv1(out,in);         // not gate with 2 unit rise and 1 unit fall
+
+ bufif1 #(1,1,2) tri1(out,in,en); // tri-state gate with unit rise/fall and 2 unit off
+
+• Min/Typ/Max
+ and #(1:2:3) g1(out,a,b);        // 1 ns min, 2ns typical, 3ns max delay
+
+
+• Can specify min/typ/max for rise and fall separately
+ and #(2:3:4, 1:2:3) g1(out,a,b); // gate has different rise,fall for min:typ:max
+
+
+
+
+• Selection of timing set can is typically done in simulation environment
+                               Invoke command line verilog engine (like Verilog
+ % verilog test.v +maxdelays
+                               XL) selecting the maxdelay time set.
+

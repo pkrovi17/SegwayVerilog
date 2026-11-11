@@ -1,0 +1,40 @@
+Ex14 - Pranav Krovi (pkrovi)
+Actual Icarus Verilog output
+
+fast_sim=1, supplied PID_fastsim_tb:
+GOOD1: zero in should give zero out
+GOOD2: PID_cntrl should be P_term only
+GOOD3: ss_tmr should be 0x00 since pwr_up=0
+GOOD4: D_term in proper range
+GOOD5: I_term should be 0x00be
+GOOD6: I_term should be 0x023d
+GOOD7: I_term should be saturated at 0x3fff
+GOOD8: I_term should be 0x1811
+GOOD9: I_term should be 0, P_term should be 0x0090
+GOOD10: I_term should be 0x7f40, P_term should be 0x7b80
+GOOD11: PID_cntrl should be saturated negative
+GOOD12: I_term should be 0x67A6, P_term should be 0x11F7
+GOOD13: ss_tmr should be 0x01
+Pranav Krovi (pkrovi): YAHOO!! all tests passed!
+
+Ex14/PID_fastsim_tb.sv:185: $stop called at 42745000 (1ps)
+
+fast_sim=0, earlier provided PID debug testbench:
+GOOD1: zero in should give zero out
+GOOD2: PID_cntrl should be P_term only
+GOOD3: ss_tmr should be 0x00 since pwr_up=0
+GOOD4: D_term in proper range
+GOOD5: I_term should be 5
+GOOD6: I_term should be 0x11
+GOOD7: I_term should be saturated at 0x7FF
+GOOD8: I_term should be 5
+GOOD9: I_term should be 0, P_term should be 0x0090
+GOOD10: I_term should be 0x7FFA, P_term should be 0x7B80
+GOOD11: PID_cntrl should be saturated negative
+GOOD12: I_term should be 0x7801, P_term should be 0x0240
+GOOD13: ss_tmr should be 0x01
+YAHOO!! all tests passed...my name is Pranav Krovi (pkrovi)
+
+/tmp/ex14-sim/PID_normal_tb.sv:181: $stop called at 10948195000 (1ps)
+
+balance_cntrl: compilation/elaboration passed with fast_sim=1 and fast_sim=0.

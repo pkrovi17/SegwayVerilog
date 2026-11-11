@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : balance_cntrl
+Version: Y-2026.03
+Date   : Fri Oct 30 10:36:51 2026
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_ss0p95v125c (File: /srv/auto/apps/saed32_edk/2023/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db)
+
+Number of ports:                           75
+Number of nets:                          1106
+Number of cells:                          886
+Number of combinational cells:            841
+Number of sequential cells:                45
+Number of macros/black boxes:               0
+Number of buf/inv:                         98
+Number of references:                      40
+
+Combinational area:               2345.494959
+Buf/Inv area:                      133.171458
+Noncombinational area:             321.238021
+Macro/Black Box area:                0.000000
+Net Interconnect area:             513.946087
+
+Total cell area:                  2666.732981
+Total area:                       3180.679067
+1
